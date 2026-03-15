@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Marina · Plan Semanal</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c10;
+      --sf: #151519;
+      --card: #1a1a22;
+      --card2: #1f1f2a;
+      --tx: #e8e8ec;
+      --dm: #6a6a7e;
+      --bd: #252530;
+      --wu: #f4a85c;
+      --gl: #c8f45c;
+      --vm: #5cc8f4;
+      --tr: #f45ca8;
+      --co: #a85cf4;
+      --bo: #f45c5c;
+      --bi: #f4d35c;
+      --yo: #5cf4b8;
+      --vi: #ff79c6;
+      --r: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--tx);
+      min-height: 100dvh;
+      padding: 0 0 80px;
+      overflow-x: hidden;
+      display: none;
+      /* Hidden by default */
+    }
+
+    .home-btn {
+      position: absolute;
+      top: 48px;
+      left: 20px;
+      text-decoration: none;
+      color: var(--dm);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.6;
+    }
+
+    .home-btn:active {
+      opacity: 1;
+    }
+
+    .hd {
+      padding: 44px 20px 16px;
+      text-align: center
+    }
+
+    .hd h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--gl), var(--co));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent
+    }
+
+    .hd p {
+      font-family: 'Space Mono', monospace;
+      font-size: .6rem;
+      color: var(--dm);
+      margin-top: 6px;
+      letter-spacing: 2px;
+      text-transform: uppercase
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+      padding: 12px 16px 6px
+    }
+
+    .tag {
+      font-family: 'Space Mono', monospace;
+      font-size: .52rem;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      opacity: .8
+    }
+
+    /* DAY */
+    .dy {
+      margin: 6px 10px;
+      border-radius: var(--r);
+      background: var(--sf);
+      border: 1px solid var(--bd);
+      overflow: hidden;
+      transition: border-color .3s
+    }
+
+    .dy.open {
+      border-color: #3a3a4a
+    }
+
+    .dh {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 13px 14px;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none
+    }
+
+    .dh:active {
+      opacity: .7
+    }
+
+    .dn {
+      font-family: 'Space Mono', monospace;
+      font-size: .5rem;
+      font-weight: 700;
+      min-width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .di {
+      flex: 1;
+      min-width: 0
+    }
+
+    .di b {
+      font-size: .92rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1.2
+    }
+
+    .di span {
+      font-family: 'Space Mono', monospace;
+      font-size: .55rem;
+      color: var(--dm);
+      display: block;
+      margin-top: 2px
+    }
+
+    .dt {
+      font-family: 'Space Mono', monospace;
+      font-size: .48rem;
+      padding: 3px 7px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      white-space: nowrap
+    }
+
+    .dc {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      transition: transform .3s;
+      opacity: .3
+    }
+
+    .dy.open .dc {
+      transform: rotate(180deg);
+      opacity: .6
+    }
+
+    .db {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s ease
+    }
+
+    .dy.open .db {
+      max-height: 8000px
+    }
+
+    .dbc {
+      padding: 2px 10px 14px
+    }
+
+    /* SECTION */
+    .sl {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 4px 8px
+    }
+
+    .sd {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    .st {
+      font-family: 'Space Mono', monospace;
+      font-size: .58rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700
+    }
+
+    /* EXERCISE */
+    .ex {
+      background: var(--card);
+      border-radius: 11px;
+      margin-bottom: 5px;
+      overflow: hidden;
+      transition: background .3s
+    }
+
+    .ex.open {
+      background: var(--card2)
+    }
+
+    .eh {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 12px;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none
+    }
+
+    .eh:active {
+      opacity: .7
+    }
+
+    .ec {
+      font-family: 'Space Mono', monospace;
+      font-size: .5rem;
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .ei {
+      flex: 1;
+      min-width: 0
+    }
+
+    .ei b {
+      font-size: .82rem;
+      font-weight: 600;
+      display: block;
+      line-height: 1.2
+    }
+
+    .ei span {
+      font-family: 'Space Mono', monospace;
+      font-size: .52rem;
+      color: var(--dm);
+      display: block;
+      margin-top: 2px
+    }
+
+    .ev {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      transition: transform .3s;
+      opacity: .3
+    }
+
+    .ex.open .ev {
+      transform: rotate(180deg);
+      opacity: .6
+    }
+
+    .eb {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease
+    }
+
+    .ex.open .eb {
+      max-height: 900px
+    }
+
+    .ebc {
+      padding: 4px 12px 12px 46px
+    }
+
+    .ebc p {
+      font-size: .76rem;
+      line-height: 1.55;
+      color: #b0b0c0;
+      margin-bottom: 6px
+    }
+
+    .tip {
+      font-size: .7rem;
+      color: var(--dm);
+      border-left: 2px solid;
+      padding-left: 9px;
+      margin-top: 2px;
+      font-style: italic;
+      line-height: 1.5
+    }
+
+    /* SVG FIGURE */
+    .fig {
+      display: flex;
+      justify-content: center;
+      padding: 8px 0 4px
+    }
+
+    .fig svg {
+      height: 70px;
+      opacity: .7
+    }
+
+    /* VIDEO / YOGA NOTE */
+    .vnote {
+      margin: 8px 0;
+      padding: 12px 14px;
+      border-radius: 11px
+    }
+
+    .vnote b {
+      font-size: .82rem;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .vnote p {
+      font-size: .74rem;
+      color: #b0b0c0;
+      line-height: 1.5
+    }
+
+    .ft {
+      text-align: center;
+      padding: 28px 16px 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: .55rem;
+      color: var(--dm);
+      letter-spacing: 1px
+    }
+
+    .chv {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    /* ORDER NOTE */
+    .onote {
+      font-family: 'Space Mono', monospace;
+      font-size: .52rem;
+      color: var(--dm);
+      padding: 4px 6px 8px;
+      line-height: 1.6;
+      letter-spacing: .3px
+    }
+
+    /* EXERCISE IMAGES */
+    .ex-imgs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 10px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .ex-imgs img {
+      width: 200px;
+      height: 266px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      border: 1px solid var(--bd);
+      background: var(--bg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="home-btn">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+      <path d="M7 2 L3 5 L7 8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    Home
+  </a>
+
+  <div class="hd">
+    <h1>Plan Semanal</h1>
+    <p>Phase 1 · Semanas 1–4</p>
+  </div>
+  <div class="tags">
+    <span class="tag" style="color:var(--gl);border-color:var(--gl)">Glúteos</span>
+    <span class="tag" style="color:var(--vm);border-color:var(--vm)">VMO</span>
+    <span class="tag" style="color:var(--co);border-color:var(--co)">Core</span>
+    <span class="tag" style="color:var(--tr);border-color:var(--tr)">Tríceps</span>
+    <span class="tag" style="color:var(--bi);border-color:var(--bi)">Bíceps</span>
+  </div>
+
+  <!-- ═══════════ LUNES — PEACH PLAN ═══════════ -->
+  <div class="dy" onclick="tDay(event,this)">
+    <div class="dh">
+      <div class="dn" style="background:rgba(200,244,92,.12);color:var(--gl)">L</div>
+      <div class="di"><b>Lunes</b><span>Peach Plan · Phase 1</span></div>
+      <div class="dt" style="background:rgba(200,244,92,.1);color:var(--gl)">~30 min</div>
+      <svg class="dc" viewBox="0 0 24 24">
+        <path class="chv" d="M6 9l6 6 6-6" />
+      </svg>
+    </div>
+    <div class="db">
+      <div class="dbc">
+
+        <!-- WARM UP -->
+        <div class="sl">
+          <div class="sd" style="background:var(--wu)"></div>
+          <div class="st" style="color:var(--wu)">Warm-up · 2 rondas</div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,168,92,.12);color:var(--wu)">W1</div>
+            <div class="ei"><b>Lateral Walks</b><span>2 × 1 min · banda</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="ex-imgs">
+                <img src="assets/lat_walk_1.png" alt="Lateral Band Walks — imagen 1 (posición inicio)">
+                <img src="assets/lat_walk_2.png" alt="Lateral Band Walks — imagen 2 (paso lateral)">
+              </div>
+              <p>Banda de tela en muslos. Posición de media sentadilla, pecho arriba. Pasos laterales controlados
+                manteniendo tensión constante.</p>
+              <p class="tip" style="border-color:var(--wu)">Pies paralelos. Las rodillas empujan hacia fuera contra la
+                banda en cada paso.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,168,92,.12);color:var(--wu)">W2</div>
+            <div class="ei"><b>Step Backs</b><span>2 × 15 / pierna</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="ex-imgs">
+                <img src="assets/step_back_1.png" alt="Step Backs — inicio">
+                <img src="assets/step_back_2.png" alt="Step Backs — lunge">
+              </div>
+              <p>De pie, da un paso atrás, baja hasta que la rodilla trasera casi toque el suelo. Empuja con el talón
+                delantero para volver. 15 reps una pierna, luego 15 la otra.</p>
+              <p class="tip" style="border-color:var(--wu)">Activa el glúteo mayor. Rodilla delantera sobre el tobillo,
+                no hacia delante.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUPERSET 1 -->
+        <div class="sl">
+          <div class="sd" style="background:var(--gl)"></div>
+          <div class="st" style="color:var(--gl)">Superset 1 · Glúteo mayor</div>
+        </div>
+        <div class="onote">Haz A1 → A2 → descanso → repite. Hip thrust 4 sets, kickbacks 3 sets.</div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(200,244,92,.1);color:var(--gl)">A1</div>
+            <div class="ei"><b>Hip Thrust</b><span>4 × 15 · mancuerna en cadera</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="ex-imgs">
+                <img src="assets/hip_thrust_1.png" alt="Hip Thrust — abajo">
+                <img src="assets/hip_thrust_2.png" alt="Hip Thrust — arriba">
+              </div>
+              <p><strong>Setup:</strong> Espalda alta contra el bench (debajo de omóplatos). Mancuerna pesada en la
+                cadera. Pies al ancho de hombros, plantas en el suelo.</p>
+              <p><strong>Ejecución:</strong> Empuja con los talones, sube caderas hasta que el cuerpo forme línea recta
+                hombros-rodillas. Aprieta glúteos FUERTE arriba. Baja controlado.</p>
+              <p><strong>Músculo:</strong> Glúteo mayor — el motor principal de extensión de cadera.</p>
+              <p class="tip" style="border-color:var(--gl)">Las tibias deben estar verticales arriba. Barbilla
+                ligeramente recogida. No arquees la lumbar — el movimiento sale de la cadera, no de la espalda.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(200,244,92,.1);color:var(--gl)">A2</div>
+            <div class="ei"><b>Straight Leg Kickbacks</b><span>3 × 15 / pierna · banda</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="ex-imgs">
+                <img src="assets/kickback_1.png" alt="Kickbacks — inicio">
+                <img src="assets/kickback_2.png" alt="Kickbacks — extensión">
+              </div>
+              <p><strong>Setup:</strong> A cuatro patas, banda en tobillos. Manos bajo hombros, rodillas bajo caderas.
+                Core apretado, espalda plana.</p>
+              <p><strong>Ejecución:</strong> Pierna recta, empuja el talón hacia el techo. Aprieta glúteo arriba. Baja
+                controlado sin tocar el suelo. 15 reps un lado, luego el otro.</p>
+              <p><strong>Músculo:</strong> Glúteo mayor, zona superior (la "top shelf").</p>
+              <p class="tip" style="border-color:var(--gl)">Sin impulso. Lento y controlado. Si la espalda se arquea, no
+                subas tanto. Todas las reps de un lado antes de cambiar.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUPERSET 2 -->
+        <div class="sl">
+          <div class="sd" style="background:var(--gl)"></div>
+          <div class="st" style="color:var(--gl)">Superset 2 · Glúteo + lateral</div>
+        </div>
+        <div class="onote">Haz B1 → B2 → descanso → repite × 3 sets.</div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(200,244,92,.1);color:var(--gl)">B1</div>
+            <div class="ei"><b>Bodyweight Squats</b><span>3 × 15</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="ex-imgs">
+                <img src="assets/squat_1.png" alt="Squats — inicio">
+                <img src="assets/squat_2.png" alt="Squats — bajada">
+              </div>
+              <p><strong>Setup:</strong> Pies al ancho de hombros, puntas ligeramente hacia fuera. Pecho arriba, core
+                apretado.</p>
+              <p><strong>Ejecución:</strong> Empuja caderas atrás como si te sentaras. Baja hasta muslos paralelos o
+                más. Sube empujando con talones, aprieta glúteos arriba.</p>
+              <p class="tip" style="border-color:var(--gl)">Rodillas en línea con los pies. Peso en los talones, no en
+                las puntas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(200,244,92,.1);color:var(--gl)">B2</div>
+            <div class="ei"><b>Lateral Leg Raises</b><span>3 × 15 / pierna · banda</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="ex-imgs">
+                <img src="assets/lat_leg_raise_1.png" alt="Lateral Leg Raise — inicio">
+              </div>
+              <p><strong>Setup:</strong> Tumbada de lado, cuerpo en línea recta. Banda en tobillos o muslos. Cabeza
+                apoyada en la mano.</p>
+              <p><strong>Ejecución:</strong> Pierna recta, pie en flex, lidera con el talón. Sube la pierna hacia el
+                techo. Controla la bajada — 2 seg arriba, 2 seg abajo.</p>
+              <p><strong>Músculo:</strong> Glúteo medio — lateral de la cadera.</p>
+              <p class="tip" style="border-color:var(--gl)">No subas más de 45°. Los primeros grados son donde más
+                trabaja el glúteo medio. 15 reps un lado, luego gira y el otro.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ MARTES — GABRIELA ═══════════ -->
+  <div class="dy" onclick="tDay(event,this)">
+    <div class="dh">
+      <div class="dn" style="background:rgba(255,121,198,.12);color:var(--vi)">M</div>
+      <div class="di"><b>Martes</b><span>Glúteos · extensión de cadera</span></div>
+      <div class="dt" style="background:rgba(255,121,198,.1);color:var(--vi)">Vídeo</div>
+      <svg class="dc" viewBox="0 0 24 24">
+        <path class="chv" d="M6 9l6 6 6-6" />
+      </svg>
+    </div>
+    <div class="db">
+      <div class="dbc">
+        <div class="vnote" style="background:rgba(255,121,198,.06);border:1px solid rgba(255,121,198,.15)">
+          <b style="color:var(--vi)">📱 Vídeo Gabriela</b>
+          <p><strong>Foco:</strong> Glúteo mayor — hip thrusts, kickbacks, bridges, extensión de cadera.</p>
+          <p style="margin-top:6px"><strong>Por qué hoy:</strong> Ayer el Peach Plan ya trabajó glúteos con carga. Hoy
+            Gabriela los ataca desde otro ángulo y con otro estilo. Los glúteos aguantan frecuencia alta — dos días
+            seguidos con patrones distintos es óptimo para hipertrofia.</p>
+          <p style="margin-top:6px"><strong>Duración:</strong> 20-30 min. Elige un vídeo enfocado en glúteos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ MIÉRCOLES — BRIONY ═══════════ -->
+  <div class="dy" onclick="tDay(event,this)">
+    <div class="dh">
+      <div class="dn" style="background:rgba(255,121,198,.12);color:var(--vi)">X</div>
+      <div class="di"><b>Miércoles</b><span>Core + brazos</span></div>
+      <div class="dt" style="background:rgba(255,121,198,.1);color:var(--vi)">Vídeo</div>
+      <svg class="dc" viewBox="0 0 24 24">
+        <path class="chv" d="M6 9l6 6 6-6" />
+      </svg>
+    </div>
+    <div class="db">
+      <div class="dbc">
+        <div class="vnote" style="background:rgba(255,121,198,.06);border:1px solid rgba(255,121,198,.15)">
+          <b style="color:var(--vi)">📱 Vídeo Pilates by Briony</b>
+          <p><strong>Foco:</strong> Core profundo, oblicuos, estabilidad + algo de brazos y hombros.</p>
+          <p style="margin-top:6px"><strong>Por qué hoy:</strong> Cambio total de foco. Después de 2 días de glúteos,
+            hoy toca core y upper body con control. Briony complementa perfecto.</p>
+          <p style="margin-top:6px"><strong>Duración:</strong> 20-30 min. Elige uno que incluya core y brazos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ JUEVES — CORE ═══════════ -->
+  <div class="dy" onclick="tDay(event,this)">
+    <div class="dh">
+      <div class="dn" style="background:rgba(168,92,244,.12);color:var(--co)">J</div>
+      <div class="di"><b>Jueves</b><span>Core + core lateral + glúteo</span></div>
+      <div class="dt" style="background:rgba(168,92,244,.1);color:var(--co)">25 min</div>
+      <svg class="dc" viewBox="0 0 24 24">
+        <path class="chv" d="M6 9l6 6 6-6" />
+      </svg>
+    </div>
+    <div class="db">
+      <div class="dbc">
+
+        <div class="sl">
+          <div class="sd" style="background:var(--wu)"></div>
+          <div class="st" style="color:var(--wu)">Warm-up · 3 min</div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,168,92,.12);color:var(--wu)">W1</div>
+            <div class="ei"><b>Band Walks + Clamshells</b><span>1 min + 10/lado</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <p>Lateral walks 1 min + clamshells 10/lado. Activación glútea para mantener frecuencia.</p>
+              <p class="tip" style="border-color:var(--wu)">Hoy el foco es core, pero siempre activamos glúteos primero.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,168,92,.12);color:var(--wu)">W2</div>
+            <div class="ei"><b>Dead Bugs</b><span>1 × 8</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 140 70" fill="none" stroke="var(--wu)" stroke-width="2" stroke-linecap="round">
+                  <!-- lying on back, opposite arm/leg extended -->
+                  <circle cx="30" cy="45" r="5" />
+                  <line x1="35" y1="45" x2="80" y2="45" /><!-- torso -->
+                  <!-- left arm up -->
+                  <line x1="45" y1="45" x2="40" y2="22" />
+                  <!-- right arm extended -->
+                  <line x1="55" y1="45" x2="65" y2="25" />
+                  <!-- left leg bent 90 -->
+                  <line x1="80" y1="45" x2="80" y2="28" />
+                  <line x1="80" y1="28" x2="92" y2="28" />
+                  <!-- right leg extended -->
+                  <line x1="80" y1="45" x2="105" y2="55" />
+                  <!-- floor line -->
+                  <line x1="10" y1="52" x2="130" y2="52" opacity=".15" />
+                </svg>
+              </div>
+              <p>Boca arriba, brazos al techo, rodillas 90°. Extiende brazo y pierna opuesta. Lumbar pegada al suelo
+                siempre. Alterna.</p>
+              <p class="tip" style="border-color:var(--wu)">Prepara el core para todo lo que viene.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOQUE A -->
+        <div class="sl">
+          <div class="sd" style="background:var(--co)"></div>
+          <div class="st" style="color:var(--co)">A · Core lateral (oblicuos)</div>
+        </div>
+        <div class="onote">Haz A1 → A2 → descanso → repite × 3 sets.</div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(168,92,244,.1);color:var(--co)">A1</div>
+            <div class="ei"><b>Side Plank Hip Dips</b><span>3 × 10 / lado</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 140 70" fill="none" stroke="var(--co)" stroke-width="2" stroke-linecap="round">
+                  <!-- side plank position -->
+                  <circle cx="30" cy="18" r="5" />
+                  <line x1="33" y1="22" x2="70" y2="22" /><!-- torso -->
+                  <line x1="33" y1="22" x2="30" y2="45" /><!-- supporting arm -->
+                  <line x1="70" y1="22" x2="105" y2="42" /><!-- legs -->
+                  <!-- hip dip arrow -->
+                  <path d="M55 26 Q55 38 55 42" stroke-dasharray="3 2" opacity=".4" />
+                  <path d="M52 39l3 3 3-3" opacity=".4" />
+                  <!-- floor -->
+                  <line x1="10" y1="48" x2="130" y2="48" opacity=".15" />
+                </svg>
+              </div>
+              <p><strong>Posición:</strong> Side plank sobre antebrazo. Cuerpo en línea recta.</p>
+              <p><strong>Ejecución:</strong> Baja la cadera al suelo, sube apretando oblicuo. Controlado.</p>
+              <p class="tip" style="border-color:var(--co)">Si te cuestan, apoya rodilla de abajo. Piensa "cadera al
+                techo" en cada rep.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(168,92,244,.1);color:var(--co)">A2</div>
+            <div class="ei"><b>Thread the Needle</b><span>3 × 10 / lado</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 140 70" fill="none" stroke="var(--co)" stroke-width="2" stroke-linecap="round">
+                  <!-- side plank with rotation -->
+                  <circle cx="35" cy="15" r="5" />
+                  <line x1="38" y1="19" x2="70" y2="22" /><!-- torso -->
+                  <line x1="38" y1="19" x2="32" y2="42" /><!-- support arm -->
+                  <line x1="70" y1="22" x2="105" y2="42" /><!-- legs -->
+                  <!-- free arm threading under -->
+                  <line x1="42" y1="19" x2="55" y2="38" />
+                  <!-- rotation arrow -->
+                  <path d="M48 10 Q58 8 55 18" stroke-dasharray="3 2" opacity=".4" />
+                  <!-- floor -->
+                  <line x1="10" y1="48" x2="130" y2="48" opacity=".15" />
+                </svg>
+              </div>
+              <p><strong>Posición:</strong> Side plank sobre la mano (o antebrazo). Brazo libre arriba.</p>
+              <p><strong>Ejecución:</strong> Rota el torso y pasa el brazo libre por debajo del cuerpo — "enhebrar la
+                aguja". Vuelve abriendo el pecho.</p>
+              <p class="tip" style="border-color:var(--co)">La cadera no se mueve, solo rota el torso. Desde rodillas si
+                pierdes forma.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOQUE B -->
+        <div class="sl">
+          <div class="sd" style="background:var(--co)"></div>
+          <div class="st" style="color:var(--co)">B · Core frontal + glúteo</div>
+        </div>
+        <div class="onote">Haz B1 → B2 → descanso → repite × 3 sets.</div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(168,92,244,.1);color:var(--co)">B1</div>
+            <div class="ei"><b>Leg Lifts</b><span>3 × 12</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 140 70" fill="none" stroke="var(--co)" stroke-width="2" stroke-linecap="round">
+                  <!-- lying on back, legs raised -->
+                  <circle cx="25" cy="42" r="5" />
+                  <line x1="30" y1="42" x2="70" y2="42" /><!-- torso -->
+                  <line x1="40" y1="42" x2="35" y2="52" /><!-- arms down -->
+                  <line x1="55" y1="42" x2="50" y2="52" />
+                  <!-- legs going up -->
+                  <line x1="70" y1="42" x2="85" y2="15" />
+                  <line x1="70" y1="42" x2="90" y2="18" />
+                  <!-- arrow -->
+                  <path d="M95 35 Q95 22 90 15" stroke-dasharray="3 2" opacity=".4" />
+                  <!-- floor -->
+                  <line x1="10" y1="52" x2="130" y2="52" opacity=".15" />
+                </svg>
+              </div>
+              <p><strong>Posición:</strong> Tumbada boca arriba, manos bajo glúteos o agarrada al bench.</p>
+              <p><strong>Ejecución:</strong> Piernas juntas, baja controlado sin tocar el suelo. Sube a 90°. La bajada
+                es donde trabaja el core.</p>
+              <p class="tip" style="border-color:var(--co)">Lumbar SIEMPRE pegada al suelo. Si se despega, no bajes
+                tanto.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(200,244,92,.1);color:var(--gl)">B2</div>
+            <div class="ei"><b>Glute Bridge March</b><span>3 × 12 / lado · banda</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 140 70" fill="none" stroke="var(--gl)" stroke-width="2" stroke-linecap="round">
+                  <!-- bridge position with one knee up -->
+                  <circle cx="20" cy="38" r="5" />
+                  <line x1="25" y1="38" x2="60" y2="30" /><!-- torso angled up -->
+                  <line x1="60" y1="30" x2="80" y2="50" /><!-- supporting leg thigh -->
+                  <line x1="80" y1="50" x2="80" y2="62" /><!-- shin -->
+                  <!-- marching leg up -->
+                  <line x1="60" y1="30" x2="65" y2="14" /><!-- thigh up -->
+                  <line x1="65" y1="14" x2="72" y2="18" /><!-- shin bent -->
+                  <!-- arrow -->
+                  <path d="M68 10l-2-5 5 1" opacity=".4" />
+                  <!-- floor -->
+                  <line x1="10" y1="62" x2="130" y2="62" opacity=".15" />
+                </svg>
+              </div>
+              <p><strong>Posición:</strong> Puente de glúteos arriba, banda en muslos. Pies plantados.</p>
+              <p><strong>Ejecución:</strong> Mantén la cadera arriba y levanta una rodilla al pecho. Baja. Alterna. La
+                cadera NO puede bajar ni rotar.</p>
+              <p class="tip" style="border-color:var(--gl)">Si la cadera se ladea, es que el core lateral no aguanta.
+                Eso es exactamente lo que entrenamos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BURNOUT -->
+        <div class="sl">
+          <div class="sd" style="background:var(--bo)"></div>
+          <div class="st" style="color:var(--bo)">Burnout · opcional</div>
+        </div>
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,92,92,.1);color:var(--bo)">🔥</div>
+            <div class="ei"><b>Cross Crunches</b><span>2 × 15 / lado · sin pausa</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <p>Boca arriba, manos detrás de la cabeza. Codo a rodilla opuesta alternando. Sin tirar del cuello.</p>
+              <p class="tip" style="border-color:var(--bo)">Velocidad controlada. Quema oblicuos hasta el final.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ VIERNES — YOGA ═══════════ -->
+  <div class="dy" onclick="tDay(event,this)">
+    <div class="dh">
+      <div class="dn" style="background:rgba(92,244,184,.12);color:var(--yo)">V</div>
+      <div class="di"><b>Viernes</b><span>Recuperación activa</span></div>
+      <div class="dt" style="background:rgba(92,244,184,.1);color:var(--yo)">Yoga</div>
+      <svg class="dc" viewBox="0 0 24 24">
+        <path class="chv" d="M6 9l6 6 6-6" />
+      </svg>
+    </div>
+    <div class="db">
+      <div class="dbc">
+        <div class="vnote" style="background:rgba(92,244,184,.06);border:1px solid rgba(92,244,184,.15)">
+          <b style="color:var(--yo)">🧘 Yoga Stretching</b>
+          <p><strong>Foco:</strong> Movilidad de cadera, estirar espalda y hombros. Recuperación.</p>
+          <p style="margin-top:6px"><strong>Por qué hoy:</strong> 4 días seguidos de entreno. El cuerpo necesita
+            recuperar sin parar del todo. Prioriza pigeon pose, 90/90 y estiramientos de columna.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ FIN DE SEMANA ═══════════ -->
+  <div class="dy" onclick="tDay(event,this)">
+    <div class="dh">
+      <div class="dn" style="background:rgba(244,213,92,.12);color:var(--bi)">+</div>
+      <div class="di"><b>Sáb o Dom</b><span>Brazos + VMO + core lateral</span></div>
+      <div class="dt" style="background:rgba(244,213,92,.1);color:var(--bi)">Opcional</div>
+      <svg class="dc" viewBox="0 0 24 24">
+        <path class="chv" d="M6 9l6 6 6-6" />
+      </svg>
+    </div>
+    <div class="db">
+      <div class="dbc">
+
+        <div class="sl">
+          <div class="sd" style="background:var(--wu)"></div>
+          <div class="st" style="color:var(--wu)">Warm-up · 3 min</div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,168,92,.12);color:var(--wu)">W1</div>
+            <div class="ei"><b>Band Walks + Clamshells</b><span>1 min + 10/lado</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <p>Lateral walks 1 min + clamshells 10/lado. Activación glútea rápida.</p>
+              <p class="tip" style="border-color:var(--wu)">Aunque hoy el foco es brazos y VMO, siempre activamos
+                glúteos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOQUE A — TRÍCEPS -->
+        <div class="sl">
+          <div class="sd" style="background:var(--tr)"></div>
+          <div class="st" style="color:var(--tr)">A · Tríceps (parte colgante)</div>
+        </div>
+        <div class="onote">Haz A1 → A2 → descanso → repite × 3 sets.</div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,92,168,.1);color:var(--tr)">A1</div>
+            <div class="ei"><b>Skull Crushers</b><span>3 × 12-15 · mancuernas</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 140 70" fill="none" stroke="var(--tr)" stroke-width="2" stroke-linecap="round">
+                  <!-- lying on bench, arms bending at elbow -->
+                  <rect x="10" y="35" width="70" height="10" rx="3" stroke-opacity=".2" />
+                  <circle cx="22" cy="30" r="5" />
+                  <line x1="27" y1="32" x2="65" y2="32" /><!-- torso -->
+                  <!-- arms: upper arm vertical, forearm bending towards head -->
+                  <line x1="45" y1="32" x2="45" y2="14" /><!-- upper arm -->
+                  <line x1="45" y1="14" x2="35" y2="22" /><!-- forearm bending -->
+                  <line x1="55" y1="32" x2="55" y2="14" />
+                  <line x1="55" y1="14" x2="45" y2="22" />
+                  <!-- dumbbells -->
+                  <circle cx="35" cy="22" r="3" stroke-opacity=".5" />
+                  <circle cx="45" cy="22" r="3" stroke-opacity=".5" />
+                  <!-- legs off bench -->
+                  <line x1="65" y1="35" x2="85" y2="55" />
+                  <line x1="85" y1="55" x2="85" y2="68" />
+                </svg>
+              </div>
+              <p><strong>Setup:</strong> Tumbada en bench, mancuernas arriba con brazos extendidos.</p>
+              <p><strong>Ejecución:</strong> Baja doblando SOLO los codos hasta la frente. Sube apretando tríceps. 6-10
+                kg.</p>
+              <p class="tip" style="border-color:var(--tr)">Codos siempre apuntando al techo, que no se abran hacia los
+                lados.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,92,168,.1);color:var(--tr)">A2</div>
+            <div class="ei"><b>Overhead Tricep Extension</b><span>3 × 15 · mancuerna</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 120 80" fill="none" stroke="var(--tr)" stroke-width="2" stroke-linecap="round">
+                  <!-- seated, arms overhead -->
+                  <rect x="30" y="45" width="25" height="8" rx="2" stroke-opacity=".2" /><!-- bench -->
+                  <circle cx="48" cy="16" r="5" />
+                  <line x1="48" y1="21" x2="48" y2="48" /><!-- torso -->
+                  <!-- arms behind head -->
+                  <line x1="48" y1="28" x2="48" y2="8" /><!-- upper arm up -->
+                  <line x1="48" y1="8" x2="42" y2="24" /><!-- forearm behind -->
+                  <!-- dumbbell -->
+                  <rect x="38" y="22" width="8" height="4" rx="1" stroke-opacity=".5" />
+                  <!-- arrow showing extension -->
+                  <path d="M54 20l0-10" stroke-dasharray="3 2" opacity=".4" />
+                  <path d="M51 13l3-3 3 3" opacity=".4" />
+                  <!-- legs -->
+                  <line x1="48" y1="48" x2="38" y2="65" />
+                  <line x1="48" y1="48" x2="58" y2="65" />
+                </svg>
+              </div>
+              <p><strong>Setup:</strong> Sentada en bench, una mancuerna con dos manos detrás de la cabeza.</p>
+              <p><strong>Ejecución:</strong> Extiende arriba apretando tríceps. Baja controlado detrás de la cabeza.</p>
+              <p><strong>Músculo:</strong> Cabeza larga del tríceps — la que más se nota en la parte posterior.</p>
+              <p class="tip" style="border-color:var(--tr)">Codos pegados a las orejas. Si se abren, baja peso.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOQUE B — FUERZA CARGA + VMO -->
+        <div class="sl">
+          <div class="sd" style="background:var(--bi)"></div>
+          <div class="st" style="color:var(--bi)">B · Fuerza de carga + VMO</div>
+        </div>
+        <div class="onote">Haz B1 → B2 → descanso → repite × 3 sets.</div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,213,92,.1);color:var(--bi)">B1</div>
+            <div class="ei"><b>Curl Bíceps</b><span>3 × 12 · mancuernas</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 120 80" fill="none" stroke="var(--bi)" stroke-width="2" stroke-linecap="round">
+                  <!-- standing curl -->
+                  <circle cx="50" cy="10" r="5" />
+                  <line x1="50" y1="15" x2="50" y2="42" /><!-- torso -->
+                  <!-- right arm curling up -->
+                  <line x1="50" y1="24" x2="56" y2="34" /><!-- upper arm -->
+                  <line x1="56" y1="34" x2="54" y2="26" /><!-- forearm curled -->
+                  <circle cx="54" cy="25" r="2.5" stroke-opacity=".5" /><!-- dumbbell -->
+                  <!-- left arm down -->
+                  <line x1="50" y1="24" x2="44" y2="38" />
+                  <circle cx="44" cy="40" r="2.5" stroke-opacity=".5" />
+                  <!-- legs -->
+                  <line x1="50" y1="42" x2="44" y2="65" />
+                  <line x1="50" y1="42" x2="56" y2="65" />
+                </svg>
+              </div>
+              <p><strong>Setup:</strong> De pie, mancuernas a los lados, palmas mirando adelante.</p>
+              <p><strong>Ejecución:</strong> Sube doblando codos, aprieta bíceps arriba. Baja controlado. Sin balancear.
+              </p>
+              <p><strong>Músculo:</strong> Bíceps — fuerza de flexión para coger a tu hija pegada al cuerpo.</p>
+              <p class="tip" style="border-color:var(--bi)">Codos pegados al torso. Si te balanceas, el peso es
+                demasiado.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(92,200,244,.1);color:var(--vm)">B2</div>
+            <div class="ei"><b>Wall Sit + Pilates Ring</b><span>3 × 30 seg</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 120 80" fill="none" stroke="var(--vm)" stroke-width="2" stroke-linecap="round">
+                  <!-- wall sit -->
+                  <line x1="20" y1="5" x2="20" y2="75" opacity=".2" /><!-- wall -->
+                  <circle cx="30" cy="14" r="5" />
+                  <line x1="28" y1="19" x2="26" y2="40" /><!-- back against wall -->
+                  <line x1="26" y1="40" x2="48" y2="40" /><!-- thigh horizontal -->
+                  <line x1="48" y1="40" x2="48" y2="62" /><!-- shin vertical -->
+                  <!-- pilates ring between knees -->
+                  <ellipse cx="44" cy="40" rx="5" ry="8" stroke-dasharray="3 2" opacity=".5" />
+                  <!-- squeeze arrows -->
+                  <path d="M38 38l3 2-3 2" opacity=".4" />
+                  <path d="M50 38l-3 2 3 2" opacity=".4" />
+                </svg>
+              </div>
+              <p><strong>Setup:</strong> Espalda contra pared, rodillas 90°. Pilates ring entre rodillas.</p>
+              <p><strong>Ejecución:</strong> Aprieta el ring y mantén. Isométrico puro.</p>
+              <p><strong>Músculo:</strong> VMO — el músculo en forma de lágrima sobre la rodilla interna.</p>
+              <p class="tip" style="border-color:var(--vm)">Bíceps descansan mientras VMO trabaja. Dos músculos, cero
+                tiempo perdido.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOQUE C — CORE LATERAL + CARGA -->
+        <div class="sl">
+          <div class="sd" style="background:var(--co)"></div>
+          <div class="st" style="color:var(--co)">C · Core lateral + carga</div>
+        </div>
+        <div class="onote">Haz C1 → C2 → descanso → repite × 3 sets.</div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(168,92,244,.1);color:var(--co)">C1</div>
+            <div class="ei"><b>Pallof Press con Banda</b><span>3 × 10 / lado</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 140 70" fill="none" stroke="var(--co)" stroke-width="2" stroke-linecap="round">
+                  <!-- standing, band pulling sideways, arms extending forward -->
+                  <circle cx="70" cy="10" r="5" />
+                  <line x1="70" y1="15" x2="70" y2="42" />
+                  <!-- arms extending forward -->
+                  <line x1="70" y1="25" x2="95" y2="25" />
+                  <!-- band going sideways to anchor -->
+                  <line x1="70" y1="28" x2="20" y2="28" stroke-dasharray="4 3" opacity=".4" />
+                  <rect x="12" y="20" width="6" height="16" rx="1" opacity=".2" /><!-- anchor -->
+                  <!-- legs -->
+                  <line x1="70" y1="42" x2="64" y2="62" />
+                  <line x1="70" y1="42" x2="76" y2="62" />
+                  <!-- resistance arrow -->
+                  <path d="M40 32l-8 0" opacity=".4" />
+                  <path d="M35 29l-3 3 3 3" opacity=".4" />
+                </svg>
+              </div>
+              <p><strong>Setup:</strong> De pie, banda tube enganchada a algo fijo a la altura del pecho. Agarra con
+                ambas manos.</p>
+              <p><strong>Ejecución:</strong> Extiende brazos hacia delante. La banda tira lateralmente — tú resistes sin
+                rotar. Vuelve al pecho.</p>
+              <p><strong>Músculo:</strong> Oblicuos + transverso. Anti-rotación. Core funcional real.</p>
+              <p class="tip" style="border-color:var(--co)">Cuanto más extiendes los brazos, más difícil. Si es fácil,
+                aléjate del anclaje.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ex" onclick="tEx(event,this)">
+          <div class="eh">
+            <div class="ec" style="background:rgba(244,213,92,.1);color:var(--bi)">C2</div>
+            <div class="ei"><b>Farmer Carry</b><span>3 × 30 seg · mancuernas pesadas</span></div>
+            <svg class="ev" viewBox="0 0 24 24">
+              <path class="chv" d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+          <div class="eb">
+            <div class="ebc">
+              <div class="fig">
+                <svg viewBox="0 0 120 80" fill="none" stroke="var(--bi)" stroke-width="2" stroke-linecap="round">
+                  <!-- walking with weights -->
+                  <circle cx="50" cy="10" r="5" />
+                  <line x1="50" y1="15" x2="50" y2="40" />
+                  <!-- arms holding weights down -->
+                  <line x1="50" y1="22" x2="38" y2="40" />
+                  <line x1="50" y1="22" x2="62" y2="40" />
+                  <!-- dumbbells -->
+                  <rect x="34" y="38" width="8" height="4" rx="1" stroke-opacity=".5" />
+                  <rect x="58" y="38" width="8" height="4" rx="1" stroke-opacity=".5" />
+                  <!-- walking legs -->
+                  <line x1="50" y1="40" x2="42" y2="58" />
+                  <line x1="42" y1="58" x2="40" y2="72" />
+                  <line x1="50" y1="40" x2="58" y2="58" />
+                  <line x1="58" y1="58" x2="62" y2="72" />
+                  <!-- walk arrow -->
+                  <path d="M72 50l8 0" stroke-dasharray="3 2" opacity=".4" />
+                  <path d="M77 47l3 3-3 3" opacity=".4" />
+                </svg>
+              </div>
+              <p><strong>Setup:</strong> De pie, una mancuerna pesada en cada mano (12-24 kg).</p>
+              <p><strong>Ejecución:</strong> Camina lento por casa. Hombros atrás, core apretado, pasos cortos.</p>
+              <p><strong>Músculo:</strong> Agarre, trapecios, core, estabilidad total. Es el patrón exacto de cargar a
+                tu hija.</p>
+              <p class="tip" style="border-color:var(--bi)">Peso más pesado que puedas agarrar. Hombros abajo y atrás,
+                no encogidos.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ft">MARINA · FASE 1 · SEMANAS 1-4 · 2026</div>
+
+  <script>
+    if (localStorage.getItem('logged_in') !== 'true') {
+      window.location.href = 'index.html';
+    } else {
+      document.body.style.display = 'block';
+    }
+
+    function tDay(e, el) { if (e.target.closest('.ex')) return; el.classList.toggle('open'); if (el.classList.contains('open')) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120) }
+    function tEx(e, el) { e.stopPropagation(); el.classList.toggle('open'); if (el.classList.contains('open')) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100) }
+  </script>
+
+</body>
+
+</html>
