@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día 6 — Yoga, Movilidad y Elegancia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --accent: #a8c4a0;
+  --accent2: #6b8e65;
+  --text: #e8e0d8;
+  --muted: #8a8078;
+  --border: #2a2520;
+  --green: #7ec8a0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:0 0 60px 0; }
+.header { background:linear-gradient(135deg,var(--accent2) 0%,var(--accent) 100%); padding:32px 20px 24px; text-align:center; }
+.header h1 { font-family:'Playfair Display',serif; font-size:1.6rem; color:#fff; }
+.header .sub { font-size:0.82rem; color:rgba(255,255,255,0.8); margin-top:6px; font-weight:500; }
+.header .meta { display:flex; justify-content:center; gap:16px; margin-top:12px; font-size:0.75rem; color:rgba(255,255,255,0.7); }
+.header .meta span { background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; }
+.section-label { padding:16px 20px 8px; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); font-weight:600; }
+.block { margin:0 12px 8px; background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+.block-header { display:flex; align-items:center; padding:14px 16px; cursor:pointer; gap:12px; -webkit-tap-highlight-color:transparent; }
+.block-header:active { background:rgba(255,255,255,0.03); }
+.block-tag { background:var(--accent); color:var(--bg); font-weight:700; font-size:0.7rem; padding:3px 8px; border-radius:6px; flex-shrink:0; }
+.block-tag.warmup { background:var(--green); }
+.block-tag.flow { background:var(--accent2); color:#fff; }
+.block-name { flex:1; font-weight:600; font-size:0.88rem; }
+.block-reps { font-size:0.75rem; color:var(--muted); flex-shrink:0; }
+.chevron { width:18px; height:18px; transition:transform 0.25s ease; color:var(--muted); flex-shrink:0; }
+.block.open .chevron { transform:rotate(180deg); }
+.block-detail { display:none; padding:0 16px 16px; font-size:0.82rem; line-height:1.55; color:var(--muted); }
+.block.open .block-detail { display:block; }
+.detail-row { display:flex; gap:8px; margin-bottom:8px; align-items:flex-start; }
+.detail-icon { flex-shrink:0; width:18px; text-align:center; font-size:0.8rem; margin-top:1px; }
+.detail-text { flex:1; }
+.tip { background:rgba(168,196,160,0.08); border-left:3px solid var(--accent); padding:10px 12px; border-radius:0 8px 8px 0; margin-top:8px; font-size:0.78rem; color:var(--accent); }
+.pair-label { margin:0 12px; padding:12px 16px 4px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); font-weight:600; display:flex; align-items:center; gap:8px; }
+.pair-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.structure-box { margin:8px 12px 16px; padding:14px 16px; background:rgba(168,196,160,0.06); border:1px solid var(--border); border-radius:10px; font-size:0.78rem; color:var(--muted); line-height:1.6; }
+.structure-box strong { color:var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Día 6 — Yoga + Movilidad</h1>
+  <div class="sub">Recuperación activa · Elegancia · Flexibilidad</div>
+  <div class="meta">
+    <span>⏱ 25-30 min</span>
+    <span>🧘 Flow</span>
+    <span>🌿 Recover</span>
+  </div>
+</div>
+
+<div class="structure-box">
+  <strong>Objetivo:</strong> Recuperar los músculos, mejorar flexibilidad, trabajar postura y elegancia de movimiento. Este día NO es "perder el tiempo" — es donde tu cuerpo consolida las ganancias de la semana.<br>
+  <strong>Respiración:</strong> Inhala por nariz (4 seg), exhala por boca (6 seg) en cada posición.
+</div>
+
+<!-- FLOW 1 -->
+<div class="section-label">Opening Flow · Despertar</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Cat-Cow</span>
+    <span class="block-reps">10 ciclos</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">A cuatro patas. Inhala: abre pecho, mira arriba. Exhala: redondea, barbilla al pecho. Mueve la columna vértebra a vértebra.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Child's Pose (Balasana)</span>
+    <span class="block-reps">45 seg</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Rodillas al suelo, siéntate sobre los talones, brazos estirados al frente, frente en el suelo. Respira profundo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Estira:</strong> espalda baja, caderas, hombros.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Downward Dog</span>
+    <span class="block-reps">45 seg</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Manos y pies en el suelo, cadera arriba formando V invertida. Empuja los talones hacia el suelo (no necesitan llegar). Pecho hacia los muslos.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Estira:</strong> isquiotibiales, pantorrillas, hombros. Descomprime la columna.</span></div>
+    <div class="tip">💡 Pedalea los pies alternando, doblando una rodilla y la otra. Estira isquios de forma más suave.</div>
+  </div>
+</div>
+
+<!-- FLOW 2 -->
+<div class="section-label">Hip Opening · Caderas</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Pigeon Pose (Paloma)</span>
+    <span class="block-reps">45 seg/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Desde cuatro patas, lleva una rodilla hacia la muñeca del mismo lado, espinilla en diagonal. Pierna trasera estirada. Baja el pecho hacia delante.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Estira:</strong> rotadores de cadera + glúteo profundo. Esencial después de entrenar glúteos.</span></div>
+    <div class="tip">💡 Si es muy intenso, pon un cojín bajo la cadera. La intensidad viene con el tiempo.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">90/90 Hip Stretch</span>
+    <span class="block-reps">45 seg/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Sentada en el suelo, pierna delantera doblada 90° al frente, pierna trasera doblada 90° al lado. Espalda recta, inclínate ligeramente hacia la pierna delantera.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Estira:</strong> cadera en rotación interna y externa. Mejora movilidad general de cadera.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Frog Stretch</span>
+    <span class="block-reps">45 seg</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">A cuatro patas, abre las rodillas lo máximo posible, pies hacia fuera. Baja el pecho y las caderas hacia el suelo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Estira:</strong> aductores (pierna interna) y cadera profunda.</span></div>
+  </div>
+</div>
+
+<!-- FLOW 3 -->
+<div class="section-label">Postura + Elegancia</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Cobra / Upward Dog</span>
+    <span class="block-reps">30 seg × 2</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Boca abajo, manos bajo los hombros. Empuja el pecho hacia arriba estirando los brazos. Hombros abajo, lejos de las orejas.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Estira:</strong> abdomen, flexores de cadera. <strong>Fortalece:</strong> espalda baja, abre pecho.</span></div>
+    <div class="tip">💡 Contrarresta estar sentada. Abre el pecho y alarga la parte frontal del cuerpo = postura más elegante inmediatamente.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Thread the Needle</span>
+    <span class="block-reps">30 seg/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">A cuatro patas. Pasa un brazo por debajo del otro, apoyando el hombro y la sien en el suelo. El otro brazo se estira al techo o al frente.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Estira:</strong> columna torácica (espalda media), hombros. Rotación espinal que desbloquea la postura.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Wall Angel (de pie)</span>
+    <span class="block-reps">2 × 10 reps</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Espalda contra la pared, brazos en W (codos 90°). Sube los brazos por la pared hasta arriba manteniendo codos y muñecas en contacto con la pared. Baja controlado.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Trabaja:</strong> movilidad de hombro + escápulas. Mejora postura del hombro.</span></div>
+    <div class="tip">💡 Si no puedes mantener contacto con la pared → eso indica rigidez. Trabaja solo hasta donde puedas sin despegar. Mejorará semana a semana.</div>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<div class="section-label">Closing · Relajación</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Supine Twist</span>
+    <span class="block-reps">45 seg/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Boca arriba, brazos en cruz. Lleva ambas rodillas dobladas a un lado, mira hacia el lado contrario. Deja que la gravedad haga el trabajo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Estira:</strong> columna, oblicuos, pecho. Libera tensión acumulada.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag flow">F</span>
+    <span class="block-name">Savasana + Vacuum</span>
+    <span class="block-reps">2 min</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Tumbada boca arriba, brazos a los lados, ojos cerrados. 1 minuto de respiración profunda. Último minuto: haz 3 vacuums de 15 seg para cerrar la sesión activando cintura.</span></div>
+    <div class="tip">💡 Terminar con vacuum en estado relajado es cuando el transverso responde mejor. Bonus de cintura en tu día de recovery.</div>
+  </div>
+</div>
+
+<script></script>
+</body>
+</html>

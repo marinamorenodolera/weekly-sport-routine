@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día 4 — Glúteo Fase 1B</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --accent: #e8a87c;
+  --accent2: #d4726a;
+  --text: #e8e0d8;
+  --muted: #8a8078;
+  --border: #2a2520;
+  --green: #7ec8a0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:0 0 60px 0; }
+.header { background:linear-gradient(135deg,var(--accent2) 0%,var(--accent) 100%); padding:32px 20px 24px; text-align:center; }
+.header h1 { font-family:'Playfair Display',serif; font-size:1.6rem; color:#fff; }
+.header .sub { font-size:0.82rem; color:rgba(255,255,255,0.8); margin-top:6px; font-weight:500; }
+.header .meta { display:flex; justify-content:center; gap:16px; margin-top:12px; font-size:0.75rem; color:rgba(255,255,255,0.7); }
+.header .meta span { background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; }
+.section-label { padding:16px 20px 8px; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); font-weight:600; }
+.block { margin:0 12px 8px; background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+.block-header { display:flex; align-items:center; padding:14px 16px; cursor:pointer; gap:12px; -webkit-tap-highlight-color:transparent; }
+.block-header:active { background:rgba(255,255,255,0.03); }
+.block-tag { background:var(--accent); color:var(--bg); font-weight:700; font-size:0.7rem; padding:3px 8px; border-radius:6px; flex-shrink:0; }
+.block-tag.warmup { background:var(--green); }
+.block-tag.burnout { background:var(--accent2); color:#fff; }
+.block-name { flex:1; font-weight:600; font-size:0.88rem; }
+.block-reps { font-size:0.75rem; color:var(--muted); flex-shrink:0; }
+.chevron { width:18px; height:18px; transition:transform 0.25s ease; color:var(--muted); flex-shrink:0; }
+.block.open .chevron { transform:rotate(180deg); }
+.block-detail { display:none; padding:0 16px 16px; font-size:0.82rem; line-height:1.55; color:var(--muted); }
+.block.open .block-detail { display:block; }
+.detail-row { display:flex; gap:8px; margin-bottom:8px; align-items:flex-start; }
+.detail-icon { flex-shrink:0; width:18px; text-align:center; font-size:0.8rem; margin-top:1px; }
+.detail-text { flex:1; }
+.tip { background:rgba(232,168,124,0.08); border-left:3px solid var(--accent); padding:10px 12px; border-radius:0 8px 8px 0; margin-top:8px; font-size:0.78rem; color:var(--accent); }
+.pair-label { margin:0 12px; padding:12px 16px 4px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); font-weight:600; display:flex; align-items:center; gap:8px; }
+.pair-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.structure-box { margin:8px 12px 16px; padding:14px 16px; background:rgba(232,168,124,0.06); border:1px solid var(--border); border-radius:10px; font-size:0.78rem; color:var(--muted); line-height:1.6; }
+.structure-box strong { color:var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Día 4 — Glúteo Fase 1B</h1>
+  <div class="sub">Variante B · Bajo glúteo + lateral intenso</div>
+  <div class="meta">
+    <span>⏱ 40-50 min</span>
+    <span>🔥 Pesado</span>
+    <span>🍑 Glute focus</span>
+  </div>
+</div>
+
+<div class="structure-box">
+  <strong>¿Por qué variante B?</strong> Mismos músculos, ángulos diferentes. El Día 1 priorizó extensión (hip thrust). Hoy priorizamos glúteo inferior con single-leg y más trabajo lateral pesado.<br>
+  <strong>Formato:</strong> Igual que Día 1 — A/B pares, 60-90s descanso entre rondas.
+</div>
+
+<!-- WARM UP -->
+<div class="section-label">Warm-up · Activación</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Lateral Band Walks</span>
+    <span class="block-reps">2 × 1 min</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Banda en tobillos. Semiflexión, pasos laterales. Activa glúteo medio antes de cargar.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Frog Pumps (sin peso)</span>
+    <span class="block-reps">2 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Plantas juntas, rodillas abiertas. Sube caderas apretando glúteos. Como warm-up, sin peso, solo activación.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 1 -->
+<div class="pair-label">Par 1 — Glúteo Inferior · Single Leg</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A1</span>
+    <span class="block-name">Single Leg Hip Thrust (o B-stance)</span>
+    <span class="block-reps">3 × 15/pierna</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Espalda alta en bench. Una pierna empuja, la otra levantada o adelantada (B-stance). Mancuerna en cadera opcional.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Empuja con un solo talón. Aprieta glúteo 2 seg arriba. Controla bajada.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo completo de la pierna de trabajo, con énfasis en la parte inferior.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> cuádriceps dominando. Si lo sientes → acerca el pie más al banco.</span></div>
+    <div class="tip">💡 B-stance si single leg es muy difícil: un pie ligeramente adelantado toca el suelo pero no empuja.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B1</span>
+    <span class="block-name">Donkey Kickbacks (banda)</span>
+    <span class="block-reps">3 × 15/pierna</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">A cuatro patas, banda alrededor de muslos. Rodilla doblada 90°, empuja el pie hacia el techo como dando una patada. Core firme.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo mayor — especialmente la parte superior donde se forma el "shelf".</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> lumbar. Si la notas → reduce la altura de la patada.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 2 -->
+<div class="pair-label">Par 2 — Glúteo Lateral Intenso</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A2</span>
+    <span class="block-name">Standing Hip Abduction (banda + bench)</span>
+    <span class="block-reps">3 × 15/pierna</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">De pie, banda en tobillos, mano en el bench para equilibrio. Pierna recta, ábrela hacia el lado controladamente. No inclines el torso.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo medio en carga funcional (de pie). Muy transferible a caminar y estabilidad diaria.</span></div>
+    <div class="tip">💡 Ejercicio clave para genu valgo: fortalece el glúteo medio en posición funcional.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B2</span>
+    <span class="block-name">Banded Clamshells (pesadas)</span>
+    <span class="block-reps">3 × 15-20/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada de lado, banda fuerte encima de rodillas. Rodillas 90°, pies juntos. Abre rodilla arriba, aprieta 2 seg, baja controlado.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> profundo en el glúteo lateral-trasero. Hoy con banda fuerte para que sea trabajo REAL, no solo activación.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 3 -->
+<div class="pair-label">Par 3 — Glúteo Inferior + Isquio</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A3</span>
+    <span class="block-name">RDL con mancuernas</span>
+    <span class="block-reps">3 × 12-15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">De pie, mancuernas delante de los muslos. Flexiona caderas hacia atrás (como reverencia), mancuernas bajan pegadas a las piernas. Rodillas semi-flexionadas.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Baja hasta sentir estiramiento en isquios, luego sube apretando glúteos. La espalda RECTA siempre.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> estiramiento en isquiotibiales al bajar, contracción de glúteo inferior al subir.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> lumbar redondeándose. Si pasa → no bajes tanto.</span></div>
+    <div class="tip">💡 El RDL es el mejor ejercicio para la zona "under butt" — donde el glúteo se encuentra con el isquio. Usa carga moderada-pesada (10-16 kg por mancuerna).</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B3</span>
+    <span class="block-name">Feet Elevated Glute Bridge</span>
+    <span class="block-reps">3 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Boca arriba, pies en el bench (talones en el borde). Mancuerna en cadera. Sube caderas apretando glúteos.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> isquios + glúteo inferior. La elevación de pies cambia el ángulo para trabajar más la parte baja del glúteo.</span></div>
+  </div>
+</div>
+
+<!-- BURNOUT -->
+<div class="section-label">Burnout · Finisher</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag burnout">🔥</span>
+    <span class="block-name">Side-Lying Leg Raises (al fallo)</span>
+    <span class="block-reps">2 × fallo/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Sin banda. Tumbada de lado, sube la pierna hasta que no puedas más. Acabar con el glúteo lateral MUERTO.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag burnout">🔥</span>
+    <span class="block-name">Frog Pumps (pump final)</span>
+    <span class="block-reps">1 × 30</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Posición de rana, 30 reps rápidas para máximo pump. Sin peso, velocidad controlada pero sin pausa abajo.</span></div>
+  </div>
+</div>
+
+<script></script>
+</body>
+</html>

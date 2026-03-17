@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día 3 — Core Profundo + Postura + Arms</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --accent: #7ec8c8;
+  --accent2: #4a9e9e;
+  --text: #e8e0d8;
+  --muted: #8a8078;
+  --border: #2a2520;
+  --green: #7ec8a0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:0 0 60px 0; }
+.header { background:linear-gradient(135deg,var(--accent2) 0%,var(--accent) 100%); padding:32px 20px 24px; text-align:center; }
+.header h1 { font-family:'Playfair Display',serif; font-size:1.6rem; color:#fff; }
+.header .sub { font-size:0.82rem; color:rgba(255,255,255,0.8); margin-top:6px; font-weight:500; }
+.header .meta { display:flex; justify-content:center; gap:16px; margin-top:12px; font-size:0.75rem; color:rgba(255,255,255,0.7); }
+.header .meta span { background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; }
+.section-label { padding:16px 20px 8px; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); font-weight:600; }
+.block { margin:0 12px 8px; background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+.block-header { display:flex; align-items:center; padding:14px 16px; cursor:pointer; gap:12px; -webkit-tap-highlight-color:transparent; }
+.block-header:active { background:rgba(255,255,255,0.03); }
+.block-tag { background:var(--accent); color:var(--bg); font-weight:700; font-size:0.7rem; padding:3px 8px; border-radius:6px; flex-shrink:0; }
+.block-tag.warmup { background:var(--green); }
+.block-tag.burnout { background:var(--accent2); color:#fff; }
+.block-name { flex:1; font-weight:600; font-size:0.88rem; }
+.block-reps { font-size:0.75rem; color:var(--muted); flex-shrink:0; }
+.chevron { width:18px; height:18px; transition:transform 0.25s ease; color:var(--muted); flex-shrink:0; }
+.block.open .chevron { transform:rotate(180deg); }
+.block-detail { display:none; padding:0 16px 16px; font-size:0.82rem; line-height:1.55; color:var(--muted); }
+.block.open .block-detail { display:block; }
+.detail-row { display:flex; gap:8px; margin-bottom:8px; align-items:flex-start; }
+.detail-icon { flex-shrink:0; width:18px; text-align:center; font-size:0.8rem; margin-top:1px; }
+.detail-text { flex:1; }
+.tip { background:rgba(126,200,200,0.08); border-left:3px solid var(--accent); padding:10px 12px; border-radius:0 8px 8px 0; margin-top:8px; font-size:0.78rem; color:var(--accent); }
+.pair-label { margin:0 12px; padding:12px 16px 4px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); font-weight:600; display:flex; align-items:center; gap:8px; }
+.pair-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.structure-box { margin:8px 12px 16px; padding:14px 16px; background:rgba(126,200,200,0.06); border:1px solid var(--border); border-radius:10px; font-size:0.78rem; color:var(--muted); line-height:1.6; }
+.structure-box strong { color:var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Día 3 — Core + Postura + Arms</h1>
+  <div class="sub">Core profundo · Postura elegante · Lean arm detailing</div>
+  <div class="meta">
+    <span>⏱ 25-30 min</span>
+    <span>🧘 Control</span>
+    <span>💪 Lean arms</span>
+  </div>
+</div>
+
+<div class="structure-box">
+  <strong>Filosofía:</strong> Hoy es DÍA DE CONTROL. Movimientos lentos, conexión mente-músculo máxima. Peso ligero en brazos. Core = estabilización profunda, no crunch rápidos.<br>
+  <strong>Postura:</strong> Incluimos ejercicios que abren pecho y fortalecen espalda media — esto mejora cómo te ves de pie.
+</div>
+
+<!-- WARM UP -->
+<div class="section-label">Warm-up · Activación postural</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Cat-Cow (Gato-Vaca)</span>
+    <span class="block-reps">10 ciclos</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">A cuatro patas. Inhala: baja el abdomen, abre pecho, mira arriba (vaca). Exhala: redondea espalda, mete barbilla, activa abdomen (gato).</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> toda la columna moviéndose vértebra a vértebra. Movilidad espinal.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Band Pull Aparts</span>
+    <span class="block-reps">2 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Banda elástica a la anchura de hombros, brazos estirados al frente. Abre la banda llevando las manos hacia los lados, apretando entre las escápulas.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> zona entre las escápulas (romboides). Esto abre el pecho y mejora postura inmediatamente.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Lateral Band Walks</span>
+    <span class="block-reps">1 × 1 min</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Activación diaria de glúteo medio. Banda en tobillos, pasos laterales controlados.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 1 -->
+<div class="pair-label">Par 1 — Core Profundo + Postura</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A1</span>
+    <span class="block-name">Dead Bug (lento)</span>
+    <span class="block-reps">3 × 8/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Boca arriba, brazos al techo, rodillas 90°. Extiende brazo + pierna opuestos. ULTRA LENTO: 4 seg bajando, 2 seg arriba.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> transverso abdominal (cintura profunda). La lumbar PEGADA al suelo siempre.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> lumbar despegándose. Si pasa → reduce rango.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B1</span>
+    <span class="block-name">Bird Dog (con pausa)</span>
+    <span class="block-reps">3 × 8/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">A cuatro patas. Extiende brazo derecho + pierna izquierda simultáneamente formando línea recta. Mantén 3 seg. Vuelve con control.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> estabilidad del torso completo. Espalda media + core profundo trabajando juntos.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> balanceo lateral. La cadera no puede rotar.</span></div>
+    <div class="tip">💡 Este ejercicio mejora la postura porque enseña a tu cuerpo a estabilizarse manteniendo la espalda neutra.</div>
+  </div>
+</div>
+
+<!-- PAIR 2 -->
+<div class="pair-label">Par 2 — Lean Arms · Tríceps + Bíceps</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A2</span>
+    <span class="block-name">Skull Crushers</span>
+    <span class="block-reps">3 × 12-15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada en el bench, mancuernas ligeras (4-6 kg). Brazos al techo. Flexiona solo los codos, bajando las mancuernas hacia las sienes. Extiende de vuelta.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Los codos NO se mueven — solo se flexionan. Movimiento pequeño y controlado.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> parte trasera del brazo ardiendo. Tríceps completo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> dolor de codo. Si duele → baja un poco el ángulo, no bajes tanto.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B2</span>
+    <span class="block-name">Hammer Curl</span>
+    <span class="block-reps">3 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">De pie, mancuernas ligeras con agarre neutro (palmas mirándose). Flexiona los codos subiendo las mancuernas sin rotar. Baja controlado.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> bíceps + braquial. Da forma al brazo sin volumen excesivo.</span></div>
+    <div class="tip">💡 El hammer curl trabaja el braquial que es el músculo que da esa forma elegante al brazo sin ensancharlo.</div>
+  </div>
+</div>
+
+<!-- PAIR 3 -->
+<div class="pair-label">Par 3 — Core Lateral + Postura</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A3</span>
+    <span class="block-name">Side Plank (progresiva)</span>
+    <span class="block-reps">3 × 15-30s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Antebrazo + pie (o rodilla si necesario). Cuerpo recto, cadera arriba. Aprieta oblicuo para mantener.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> oblicuo y cintura lateral quemando. Esto estabiliza, no engrosa.</span></div>
+    <div class="tip">💡 Progresión: Semana 1-2: con rodilla. Semana 3-4: piernas rectas. Añade 5s cada semana.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B3</span>
+    <span class="block-name">Prone Y-Raise (postura)</span>
+    <span class="block-reps">3 × 12</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada boca abajo en el suelo (o con el pecho en el bench). Brazos en forma de Y. Sin peso o con mancuernas de 1-2 kg. Sube los brazos del suelo apretando entre escápulas.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> espalda media y trapecio inferior. Estos músculos tiran los hombros hacia atrás y abajo = postura elegante.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> trapecio superior (los que suben los hombros). Si lo sientes → baja los brazos un poco más hacia los lados (más T que Y).</span></div>
+    <div class="tip">💡 Si haces este ejercicio 3x/semana durante un mes, tu postura cambia visiblemente. Hombros atrás, pecho abierto, cuello largo.</div>
+  </div>
+</div>
+
+<!-- FINISHER -->
+<div class="section-label">Finisher · Control</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag burnout">🔥</span>
+    <span class="block-name">Hollow Hold</span>
+    <span class="block-reps">3 × 15-20s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Boca arriba, brazos estirados detrás de la cabeza, piernas estiradas. Levanta hombros y piernas del suelo, formando una "banana". La zona lumbar PEGADA al suelo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> todo el core activado como una faja. Transverso + recto abdominal.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> lumbar. Si la sientes → flexiona rodillas o no subas tanto los brazos.</span></div>
+  </div>
+</div>
+
+<script></script>
+</body>
+</html>

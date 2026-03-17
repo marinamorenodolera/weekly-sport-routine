@@ -223,6 +223,48 @@
             opacity: 0.6;
         }
 
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .day-card {
+            background: var(--card);
+            border: 1px solid var(--bd);
+            padding: 16px 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--tx);
+            text-align: center;
+            transition: border-color 0.3s, background 0.3s, transform 0.2s;
+        }
+
+        .day-card:hover {
+            border-color: var(--gl);
+            background: var(--sf);
+        }
+
+        .day-card:active {
+            transform: scale(0.96);
+        }
+
+        .day-card b {
+            font-size: 0.85rem;
+            display: block;
+        }
+
+        .day-card span {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.5rem;
+            color: var(--dm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-top: 4px;
+        }
+
         .glow {
             position: fixed;
             width: 300px;
@@ -269,6 +311,33 @@
                 </div>
                 <div class="phase-status status-active">Activo</div>
             </a>
+
+            <div class="days-grid">
+                <a href="dia1.html" class="day-card">
+                    <b>Día 1</b>
+                    <span>Glúteo</span>
+                </a>
+                <a href="dia2.html" class="day-card">
+                    <b>Día 2</b>
+                    <span>Cuádriceps</span>
+                </a>
+                <a href="dia3.html" class="day-card">
+                    <b>Día 3</b>
+                    <span>Glúteo</span>
+                </a>
+                <a href="dia4.html" class="day-card">
+                    <b>Día 4</b>
+                    <span>Isquiotibiales</span>
+                </a>
+                <a href="dia5.html" class="day-card">
+                    <b>Día 5</b>
+                    <span>Glúteo</span>
+                </a>
+                <a href="dia6.html" class="day-card">
+                    <b>Día 6</b>
+                    <span>Cardio</span>
+                </a>
+            </div>
 
             <div class="phase-card" style="opacity: 0.4; cursor: not-allowed">
                 <div class="phase-info">

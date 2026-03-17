@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día 1 — Glúteo Fase 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --accent: #e8a87c;
+  --accent2: #d4726a;
+  --text: #e8e0d8;
+  --muted: #8a8078;
+  --border: #2a2520;
+  --green: #7ec8a0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  padding: 0 0 60px 0;
+}
+.header {
+  background: linear-gradient(135deg, var(--accent2) 0%, var(--accent) 100%);
+  padding: 32px 20px 24px;
+  text-align: center;
+}
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.header .sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 6px;
+  font-weight: 500;
+}
+.header .meta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+}
+.header .meta span {
+  background: rgba(255,255,255,0.15);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.section-label {
+  padding: 16px 20px 8px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 600;
+}
+.block {
+  margin: 0 12px 8px;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.block-header {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  gap: 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+.block-header:active { background: rgba(255,255,255,0.03); }
+.block-tag {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.block-tag.warmup { background: var(--green); }
+.block-tag.burnout { background: var(--accent2); color: #fff; }
+.block-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+.block-reps {
+  font-size: 0.75rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.chevron {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.block.open .chevron { transform: rotate(180deg); }
+.block-detail {
+  display: none;
+  padding: 0 16px 16px;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.block.open .block-detail { display: block; }
+.detail-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: flex-start;
+}
+.detail-icon {
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 1px;
+}
+.detail-text { flex: 1; }
+.tip {
+  background: rgba(232,168,124,0.08);
+  border-left: 3px solid var(--accent);
+  padding: 10px 12px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+.pair-label {
+  margin: 0 12px;
+  padding: 12px 16px 4px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent2);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pair-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.structure-box {
+  margin: 8px 12px 16px;
+  padding: 14px 16px;
+  background: rgba(232,168,124,0.06);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.structure-box strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Día 1 — Glúteo Fase 1</h1>
+  <div class="sub">Hipertrofia glúteo mayor + lateral</div>
+  <div class="meta">
+    <span>⏱ 40-50 min</span>
+    <span>🔥 Pesado</span>
+    <span>🍑 Glute focus</span>
+  </div>
+</div>
+
+<div class="structure-box">
+  <strong>Estructura:</strong> Warm-up → 3 pares A/B → Burnout finisher<br>
+  <strong>Formato A/B:</strong> Haz 1 serie de A, luego 1 serie de B. Repite 3-4x.<br>
+  <strong>Descanso:</strong> 60-90s entre rondas completas A+B.<br>
+  <strong>Pierna:</strong> Termina todas las reps en una pierna antes de cambiar.
+</div>
+
+<!-- WARM UP -->
+<div class="section-label">Warm-up · Activación</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Lateral Band Walks</span>
+    <span class="block-reps">2 × 1 min</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Banda en tobillos. Semiflexión de rodillas, pasos laterales controlados. No dejes que las rodillas colapsen hacia dentro.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> quemazón en el lateral de la cadera (glúteo medio).</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> tensión en cuádriceps o zona lumbar.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Step Backs</span>
+    <span class="block-reps">2 × 15/pierna</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">De pie, da un paso largo hacia atrás. La rodilla trasera baja sin tocar el suelo. Empuja con el talón de la pierna delantera para volver.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo de la pierna delantera activándose al empujar.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Clamshells (sin banda)</span>
+    <span class="block-reps">2 × 15/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada de lado, rodillas dobladas 90°, pies juntos. Abre la rodilla de arriba como una almeja. Caderas apiladas, no rotar el torso.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> parte trasera-lateral del glúteo (glúteo medio).</span></div>
+    <div class="tip">💡 Para genu valgo: este ejercicio es clave. Aprieta 2 segundos arriba en cada rep.</div>
+  </div>
+</div>
+
+<!-- PAIR 1 -->
+<div class="pair-label">Par 1 — Glúteo Mayor · Extensión</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A1</span>
+    <span class="block-name">Hip Thrust con mancuerna</span>
+    <span class="block-reps">4 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Espalda alta apoyada en el bench (justo debajo de las escápulas). Mancuerna pesada en la cadera. Pies a la anchura de hombros, talones clavados.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Empuja con los talones hasta alinear hombros-cadera-rodilla. Aprieta glúteos 2 seg arriba. Baja controlado.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo mayor (nalga entera). La contracción fuerte arriba.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> lumbar ni cuádriceps. Si sientes lumbar → barbilla al pecho y no subas tanto.</span></div>
+    <div class="tip">💡 Carga pesada aquí. Usa la mancuerna de 20-24 kg. Este es tu ejercicio KING para glúteo mayor.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B1</span>
+    <span class="block-name">Straight Leg Kickbacks (banda)</span>
+    <span class="block-reps">3 × 15/pierna</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">A cuatro patas, banda en tobillos. Extiende una pierna recta hacia atrás-arriba, talón hacia el techo. Core firme, no arquear lumbar.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Movimiento lento y controlado. Pausa 1 seg arriba apretando glúteo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> parte superior del glúteo y conexión glúteo-isquio.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> lumbar. Si la sientes → reduce rango de movimiento.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 2 -->
+<div class="pair-label">Par 2 — Glúteo Lateral · Abducción</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A2</span>
+    <span class="block-name">Lateral Leg Raises (banda)</span>
+    <span class="block-reps">3 × 15-20/pierna</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada de lado, piernas estiradas, banda por encima de rodillas. Sube la pierna de arriba hacia el techo, pie ligeramente flexionado, talón guía.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Sube con control, pausa 1 seg arriba. Baja sin dejar caer.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> lateral de cadera — el "shelf" del glúteo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> tensor de la fascia lata (parte delantera-lateral del muslo). Si lo sientes → rota pie ligeramente hacia dentro.</span></div>
+    <div class="tip">💡 Clave para genu valgo. Fortalece el glúteo medio que estabiliza tu rodilla.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B2</span>
+    <span class="block-name">Fire Hydrants (banda)</span>
+    <span class="block-reps">3 × 12-15/pierna</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">A cuatro patas, banda por encima de rodillas. Rodilla doblada 90°, abre la rodilla hacia el lado sin mover el torso.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Sube hasta sentir el glúteo lateral. No balancees el cuerpo. Core activo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo medio y menor — zona lateral-trasera.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 3 -->
+<div class="pair-label">Par 3 — Glúteo Inferior + Lateral</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A3</span>
+    <span class="block-name">Glute Bridge con banda (abducción arriba)</span>
+    <span class="block-reps">3 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada boca arriba, pies en el suelo, banda encima de rodillas. Sube caderas (glute bridge), y arriba abre las rodillas contra la banda 3 veces. Baja.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Cada rep: sube → 3 aperturas → baja. Eso cuenta como 1 rep.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo mayor + lateral simultáneamente.</span></div>
+    <div class="tip">💡 Combo perfecto: trabajas extensión + abducción en un solo ejercicio.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B3</span>
+    <span class="block-name">Frog Pumps</span>
+    <span class="block-reps">3 × 20</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada boca arriba. Plantas de los pies juntas, rodillas abiertas (posición de rana). Mancuerna en la cadera opcional.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">Sube caderas apretando glúteos. La posición de rana maximiza contracción de glúteo y minimiza cuádriceps.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> parte inferior del glúteo, sensación de "pump" profundo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> nada en cuádriceps. Si lo sientes → junta más los pies al cuerpo.</span></div>
+  </div>
+</div>
+
+<!-- BURNOUT -->
+<div class="section-label">Burnout · Finisher</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag burnout">🔥</span>
+    <span class="block-name">Banded Clamshells (al fallo)</span>
+    <span class="block-reps">2 × fallo/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Igual que en el warm-up pero AHORA con banda. Haz reps hasta que no puedas más. El glúteo lateral debería arder.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Objetivo:</strong> fatiga total del glúteo medio. Perfecto finisher para genu valgo.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag burnout">🔥</span>
+    <span class="block-name">Pulse Hip Thrust (sin peso)</span>
+    <span class="block-reps">1 × 30 pulsos</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Hip thrust sin peso. Arriba del todo, haz 30 pulsos pequeños (no bajes del todo, solo arriba-arriba-arriba). Aprieta glúteos en cada pulso.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Objetivo:</strong> bombeo final del glúteo mayor. Terminas con la máxima congestión.</span></div>
+  </div>
+</div>
+
+<script>
+// Blocks are already handled by onclick on the .block element
+</script>
+</body>
+</html>

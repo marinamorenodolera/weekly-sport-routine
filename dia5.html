@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día 5 — Full Body Limpio + Waist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --accent: #dba0c7;
+  --accent2: #a8608e;
+  --text: #e8e0d8;
+  --muted: #8a8078;
+  --border: #2a2520;
+  --green: #7ec8a0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:0 0 60px 0; }
+.header { background:linear-gradient(135deg,var(--accent2) 0%,var(--accent) 100%); padding:32px 20px 24px; text-align:center; }
+.header h1 { font-family:'Playfair Display',serif; font-size:1.6rem; color:#fff; }
+.header .sub { font-size:0.82rem; color:rgba(255,255,255,0.8); margin-top:6px; font-weight:500; }
+.header .meta { display:flex; justify-content:center; gap:16px; margin-top:12px; font-size:0.75rem; color:rgba(255,255,255,0.7); }
+.header .meta span { background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; }
+.section-label { padding:16px 20px 8px; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); font-weight:600; }
+.block { margin:0 12px 8px; background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+.block-header { display:flex; align-items:center; padding:14px 16px; cursor:pointer; gap:12px; -webkit-tap-highlight-color:transparent; }
+.block-header:active { background:rgba(255,255,255,0.03); }
+.block-tag { background:var(--accent); color:var(--bg); font-weight:700; font-size:0.7rem; padding:3px 8px; border-radius:6px; flex-shrink:0; }
+.block-tag.warmup { background:var(--green); }
+.block-tag.burnout { background:var(--accent2); color:#fff; }
+.block-name { flex:1; font-weight:600; font-size:0.88rem; }
+.block-reps { font-size:0.75rem; color:var(--muted); flex-shrink:0; }
+.chevron { width:18px; height:18px; transition:transform 0.25s ease; color:var(--muted); flex-shrink:0; }
+.block.open .chevron { transform:rotate(180deg); }
+.block-detail { display:none; padding:0 16px 16px; font-size:0.82rem; line-height:1.55; color:var(--muted); }
+.block.open .block-detail { display:block; }
+.detail-row { display:flex; gap:8px; margin-bottom:8px; align-items:flex-start; }
+.detail-icon { flex-shrink:0; width:18px; text-align:center; font-size:0.8rem; margin-top:1px; }
+.detail-text { flex:1; }
+.tip { background:rgba(219,160,199,0.08); border-left:3px solid var(--accent); padding:10px 12px; border-radius:0 8px 8px 0; margin-top:8px; font-size:0.78rem; color:var(--accent); }
+.pair-label { margin:0 12px; padding:12px 16px 4px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); font-weight:600; display:flex; align-items:center; gap:8px; }
+.pair-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.structure-box { margin:8px 12px 16px; padding:14px 16px; background:rgba(219,160,199,0.06); border:1px solid var(--border); border-radius:10px; font-size:0.78rem; color:var(--muted); line-height:1.6; }
+.structure-box strong { color:var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Día 5 — Full Body Limpio</h1>
+  <div class="sub">Lean sculpting · Waist · Fuerza funcional</div>
+  <div class="meta">
+    <span>⏱ 30-35 min</span>
+    <span>🌸 Lean</span>
+    <span>⌛ Sculpt</span>
+  </div>
+</div>
+
+<div class="structure-box">
+  <strong>Diferencia con Día 2:</strong> El Día 2 es más upper body + core. El Día 5 incluye más pierna lean + fuerza funcional (cargar a tu hija, estabilidad). Complementa, no repite.<br>
+  <strong>Peso:</strong> Moderado. Reps altas. Descanso corto (45-60s).
+</div>
+
+<!-- WARM UP -->
+<div class="section-label">Warm-up</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Lateral Band Walks</span>
+    <span class="block-reps">1 × 1 min</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Siempre. Todos los días. Glúteo medio activado.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Bodyweight Squats</span>
+    <span class="block-reps">2 × 10</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Sin peso, solo calentar rodillas y caderas. Baja hasta paralelo, empuja con talones.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 1 -->
+<div class="pair-label">Par 1 — Pierna funcional + Glúteo</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A1</span>
+    <span class="block-name">Sumo Squat con mancuerna</span>
+    <span class="block-reps">3 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Pies más anchos que hombros, puntas hacia fuera (45°). Mancuerna colgando entre piernas con ambas manos. Baja con caderas hacia atrás, rodillas hacia fuera.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo + aductores + VMO. La postura sumo minimiza cuádriceps externo y maximiza glúteo y pierna interna.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> cuádriceps externo dominando. Si pasa → siéntate más atrás.</span></div>
+    <div class="tip">💡 Sumo squat es tu squat ideal: trabaja glúteo + VMO sin desarrollar cuádriceps externo. Perfecto para hourglass.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B1</span>
+    <span class="block-name">Glute Bridge (con mancuerna)</span>
+    <span class="block-reps">3 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Boca arriba, pies en el suelo, mancuerna en cadera. Sube apretando glúteos. Pausa 1 seg arriba.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo mayor. Hoy es trabajo moderado, no máximo, para mantener frecuencia sin sobrecargar.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 2 -->
+<div class="pair-label">Par 2 — Fuerza funcional + Cintura</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A2</span>
+    <span class="block-name">Suitcase Carry</span>
+    <span class="block-reps">3 × 30s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Una mancuerna pesada (12-16 kg) en una mano, como una maleta. Camina recto sin inclinarte hacia ese lado. Hombros nivelados, core apretado.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> oblicuo del lado contrario a la mancuerna trabajando para mantenerte recta. Es anti-flexión lateral.</span></div>
+    <div class="tip">💡 Simula cargar a tu hija de un lado. Entrenas exactamente la fuerza funcional que necesitas + trabajas oblicuo sin engrosarlo (porque es estabilización, no movimiento).</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B2</span>
+    <span class="block-name">Slow Mountain Climbers</span>
+    <span class="block-reps">3 × 10/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Posición de plancha. Lleva una rodilla hacia el codo del mismo lado MUY lentamente (3 seg). Vuelve. Alterna.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> oblicuo + core profundo. Versión lenta = control, no cardio.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> cadera moviéndose. Si se mueve → más lento y reduce rango.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 3 -->
+<div class="pair-label">Par 3 — Lean Arms + VMO</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A3</span>
+    <span class="block-name">Tricep Kickback</span>
+    <span class="block-reps">3 × 15/brazo</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Inclinada con un brazo en el bench. Codo pegado al costado, extiende el antebrazo hacia atrás. Solo se mueve el codo, el hombro NO.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> tríceps ardiendo. Peso ligero (3-5 kg), muchas reps = tono lean.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B3</span>
+    <span class="block-name">Pilates Ring Squeeze (sentada)</span>
+    <span class="block-reps">3 × 20</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Sentada en el bench, pilates ring entre las rodillas. Aprieta el ring con las rodillas (aducción). Mantén 2 seg cada squeeze.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> VMO (músculo justo arriba de la rodilla, lado interno). También aductores.</span></div>
+    <div class="tip">💡 VMO es el músculo que estabiliza la rótula y contrarresta el genu valgo. Cuanto más fuerte, mejor alineación de rodilla.</div>
+  </div>
+</div>
+
+<!-- FINISHER -->
+<div class="section-label">Finisher · Cintura</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag burnout">🔥</span>
+    <span class="block-name">Vacuum Abdominal</span>
+    <span class="block-reps">3 × 20s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Exhala, mete ombligo a la columna, mantén. Cada semana intenta añadir 5 seg. El vacuum + cetosis = cintura visible rápido.</span></div>
+  </div>
+</div>
+
+<script></script>
+</body>
+</html>

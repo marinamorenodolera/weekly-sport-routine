@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día 2 — Full Body Femenino + Waist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --accent: #c9a0dc;
+  --accent2: #8b6fae;
+  --text: #e8e0d8;
+  --muted: #8a8078;
+  --border: #2a2520;
+  --green: #7ec8a0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:0 0 60px 0; }
+.header { background:linear-gradient(135deg,var(--accent2) 0%,var(--accent) 100%); padding:32px 20px 24px; text-align:center; }
+.header h1 { font-family:'Playfair Display',serif; font-size:1.6rem; color:#fff; }
+.header .sub { font-size:0.82rem; color:rgba(255,255,255,0.8); margin-top:6px; font-weight:500; }
+.header .meta { display:flex; justify-content:center; gap:16px; margin-top:12px; font-size:0.75rem; color:rgba(255,255,255,0.7); }
+.header .meta span { background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; }
+.section-label { padding:16px 20px 8px; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); font-weight:600; }
+.block { margin:0 12px 8px; background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+.block-header { display:flex; align-items:center; padding:14px 16px; cursor:pointer; gap:12px; -webkit-tap-highlight-color:transparent; }
+.block-header:active { background:rgba(255,255,255,0.03); }
+.block-tag { background:var(--accent); color:var(--bg); font-weight:700; font-size:0.7rem; padding:3px 8px; border-radius:6px; flex-shrink:0; }
+.block-tag.warmup { background:var(--green); }
+.block-tag.burnout { background:var(--accent2); color:#fff; }
+.block-name { flex:1; font-weight:600; font-size:0.88rem; }
+.block-reps { font-size:0.75rem; color:var(--muted); flex-shrink:0; }
+.chevron { width:18px; height:18px; transition:transform 0.25s ease; color:var(--muted); flex-shrink:0; }
+.block.open .chevron { transform:rotate(180deg); }
+.block-detail { display:none; padding:0 16px 16px; font-size:0.82rem; line-height:1.55; color:var(--muted); }
+.block.open .block-detail { display:block; }
+.detail-row { display:flex; gap:8px; margin-bottom:8px; align-items:flex-start; }
+.detail-icon { flex-shrink:0; width:18px; text-align:center; font-size:0.8rem; margin-top:1px; }
+.detail-text { flex:1; }
+.tip { background:rgba(201,160,220,0.08); border-left:3px solid var(--accent); padding:10px 12px; border-radius:0 8px 8px 0; margin-top:8px; font-size:0.78rem; color:var(--accent); }
+.pair-label { margin:0 12px; padding:12px 16px 4px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); font-weight:600; display:flex; align-items:center; gap:8px; }
+.pair-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.structure-box { margin:8px 12px 16px; padding:14px 16px; background:rgba(201,160,220,0.06); border:1px solid var(--border); border-radius:10px; font-size:0.78rem; color:var(--muted); line-height:1.6; }
+.structure-box strong { color:var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Día 2 — Full Body Femenino</h1>
+  <div class="sub">Hourglass · Waist Aesthetics · Lean Toning</div>
+  <div class="meta">
+    <span>⏱ 30-35 min</span>
+    <span>💜 Lean tone</span>
+    <span>⌛ Waist focus</span>
+  </div>
+</div>
+
+<div class="structure-box">
+  <strong>Filosofía LEAN:</strong> Peso moderado, 15-20 reps, descanso corto (45-60s). No buscamos volumen — buscamos tono, definición y cintura fina.<br>
+  <strong>Glúteo:</strong> Siempre presente, pero hoy como activación, no como hipertrofia pesada.
+</div>
+
+<!-- WARM UP -->
+<div class="section-label">Warm-up · Activación global</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Lateral Band Walks</span>
+    <span class="block-reps">1 × 1 min</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text">Activar glúteo lateral antes de todo. Banda en tobillos, pasos controlados.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Arm Circles + Band Pull Aparts</span>
+    <span class="block-reps">1 min + 15 reps</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Círculos de brazos: 30s hacia delante, 30s hacia atrás. Luego banda elástica a la anchura de hombros, estira hacia los lados abriendo pecho.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> hombros calientes, escápulas activadas.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 1 -->
+<div class="pair-label">Par 1 — Hombro lateral + Glúteo</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A1</span>
+    <span class="block-name">Lateral Raises (mancuerna ligera)</span>
+    <span class="block-reps">3 × 15-18</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">De pie, mancuernas ligeras (3-5 kg). Brazos a los lados, sube hasta la altura de hombros. Codos ligeramente flexionados, meñiques arriba.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> deltoide lateral — el "cap" del hombro. Esto crea la ilusión de cintura más fina.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> trapecio (cuello/hombro superior). Si lo sientes → baja el peso.</span></div>
+    <div class="tip">💡 El deltoide lateral es TU arma secreta para el hourglass. Hombro bonito = cintura parece más fina.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B1</span>
+    <span class="block-name">Banded Glute Bridge</span>
+    <span class="block-reps">3 × 20</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada boca arriba, banda encima de rodillas. Pies en el suelo. Sube caderas apretando glúteos y empujando rodillas hacia fuera contra la banda.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo mayor + activación lateral. Hoy es mantenimiento, no hipertrofia.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 2 -->
+<div class="pair-label">Par 2 — Tríceps + Core lateral</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A2</span>
+    <span class="block-name">Overhead Tricep Extension</span>
+    <span class="block-reps">3 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Sentada o de pie, una mancuerna con ambas manos detrás de la cabeza. Codos apuntan al techo. Extiende brazos hacia arriba sin mover codos.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> parte trasera del brazo (tríceps). Esto elimina el "brazo que cuelga".</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> hombros ni codos. Si duelen → reduce el peso o rango.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B2</span>
+    <span class="block-name">Side Plank</span>
+    <span class="block-reps">3 × 20-30s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Apoyada en antebrazo y borde del pie. Cuerpo recto, cadera arriba. Si es muy difícil → apoya la rodilla de abajo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> oblicuo — costado. Es estabilidad, no volumen.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> hombro colapsando o lumbar. Si colapsa → rodilla de apoyo.</span></div>
+    <div class="tip">💡 Dijiste que te cuestan. Empieza con 15s y sube cada semana. Con rodilla apoyada es perfectamente válido.</div>
+  </div>
+</div>
+
+<!-- PAIR 3 -->
+<div class="pair-label">Par 3 — VMO + Cintura</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A3</span>
+    <span class="block-name">Wall Sit con Pilates Ring</span>
+    <span class="block-reps">3 × 30-45s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Espalda contra la pared, muslos paralelos al suelo. Pilates ring entre las rodillas. Aprieta el ring suavemente durante toda la posición.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> VMO (interior de rodilla) + cuádriceps. Aquí SÍ queremos cuádriceps interno (VMO) para estabilizar la rodilla con genu valgo.</span></div>
+    <div class="tip">💡 El ring entre rodillas activa específicamente el VMO. Clave para corregir genu valgo desde la musculatura.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B3</span>
+    <span class="block-name">Dead Bug</span>
+    <span class="block-reps">3 × 10/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada boca arriba, brazos al techo, rodillas 90°. Extiende brazo izquierdo + pierna derecha simultáneamente sin que la zona lumbar se despegue del suelo.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">MUY lento. 3 seg bajando, 1 seg abajo, 2 seg subiendo. La espalda baja NUNCA se despega.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> transverso abdominal (la faja profunda). Esto aplana el abdomen.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No sientas:</strong> flexores de cadera. Si los sientes → no bajes tanto la pierna.</span></div>
+  </div>
+</div>
+
+<!-- BURNOUT -->
+<div class="section-label">Finisher · Cintura</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag burnout">🔥</span>
+    <span class="block-name">Vacuum Abdominal</span>
+    <span class="block-reps">3 × 15-20s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">A cuatro patas o de pie. Exhala todo el aire, luego mete el ombligo hacia dentro y arriba como si quisieras pegar el ombligo a la columna. Mantén.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> toda la faja abdominal activándose. El vacuum trabaja el transverso — el músculo que literalmente estrecha la cintura.</span></div>
+    <div class="tip">💡 Este ejercicio es secreto de modelos fitness. Practicarlo 3x/semana reduce visualmente la cintura.</div>
+  </div>
+</div>
+
+<script></script>
+</body>
+</html>
