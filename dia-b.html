@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rutina B — Upper + Core + Glute</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --accent: #c9a0dc;
+  --accent2: #8b6fae;
+  --text: #e8e0d8;
+  --muted: #8a8078;
+  --border: #2a2520;
+  --green: #7ec8a0;
+  --core: #6bb8d4;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:0 0 60px 0; }
+.header { background:linear-gradient(135deg,var(--accent2) 0%,var(--accent) 100%); padding:32px 20px 24px; text-align:center; }
+.header h1 { font-family:'Playfair Display',serif; font-size:1.6rem; color:#fff; }
+.header .sub { font-size:0.82rem; color:rgba(255,255,255,0.8); margin-top:6px; font-weight:500; }
+.header .meta { display:flex; justify-content:center; gap:16px; margin-top:12px; font-size:0.75rem; color:rgba(255,255,255,0.7); flex-wrap:wrap; }
+.header .meta span { background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; }
+.section-label { padding:16px 20px 8px; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); font-weight:600; }
+.section-label.core { color:var(--core); }
+.block { margin:0 12px 8px; background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+.block-header { display:flex; align-items:center; padding:14px 16px; cursor:pointer; gap:12px; -webkit-tap-highlight-color:transparent; }
+.block-header:active { background:rgba(255,255,255,0.03); }
+.block-tag { background:var(--accent); color:var(--bg); font-weight:700; font-size:0.7rem; padding:3px 8px; border-radius:6px; flex-shrink:0; }
+.block-tag.warmup { background:var(--green); }
+.block-tag.core { background:var(--core); color:var(--bg); }
+.block-name { flex:1; font-weight:600; font-size:0.88rem; }
+.block-reps { font-size:0.75rem; color:var(--muted); flex-shrink:0; }
+.chevron { width:18px; height:18px; transition:transform 0.25s ease; color:var(--muted); flex-shrink:0; }
+.block.open .chevron { transform:rotate(180deg); }
+.block-detail { display:none; padding:0 16px 16px; font-size:0.82rem; line-height:1.55; color:var(--muted); }
+.block.open .block-detail { display:block; }
+.detail-row { display:flex; gap:8px; margin-bottom:8px; align-items:flex-start; }
+.detail-icon { flex-shrink:0; width:18px; text-align:center; font-size:0.8rem; margin-top:1px; }
+.detail-text { flex:1; }
+.tip { background:rgba(201,160,220,0.08); border-left:3px solid var(--accent); padding:10px 12px; border-radius:0 8px 8px 0; margin-top:8px; font-size:0.78rem; color:var(--accent); }
+.tip.core { background:rgba(107,184,212,0.08); border-left-color:var(--core); color:var(--core); }
+.pair-label { margin:0 12px; padding:12px 16px 4px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); font-weight:600; display:flex; align-items:center; gap:8px; }
+.pair-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.structure-box { margin:8px 12px 16px; padding:14px 16px; background:rgba(201,160,220,0.06); border:1px solid var(--border); border-radius:10px; font-size:0.78rem; color:var(--muted); line-height:1.6; }
+.structure-box strong { color:var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Rutina B — Upper + Core + Glute</h1>
+  <div class="sub">Hombros · Brazos · Espalda · Core · Corrección</div>
+  <div class="meta">
+    <span>⏱ 35-40 min</span>
+    <span>💜 Lean tone</span>
+    <span>⌛ Waist + arms</span>
+    <span>3x semana</span>
+  </div>
+</div>
+
+<div class="structure-box">
+  <strong>Estructura:</strong> Warm-up → 3 pares A/B → Core (siempre)<br>
+  <strong>Formato:</strong> Haz 1 serie de A, luego 1 serie de B. Repite el par completo.<br>
+  <strong>Descanso:</strong> 45-60s entre rondas completas A+B.<br>
+  <strong>Filosofía:</strong> Peso moderado, 12-15 reps. No buscamos volumen — buscamos tono, definición y cintura fina.
+</div>
+
+<!-- WARM UP -->
+<div class="section-label">Warm-up · Movilidad</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Shoulder Mobility</span>
+    <span class="block-reps">1 min</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Círculos de brazos: 30s hacia delante, 30s hacia atrás. Amplitud completa, controlados.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> hombros calientes y con rango completo de movimiento.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Band Pull-Aparts</span>
+    <span class="block-reps">15 reps</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Banda elástica a la anchura de hombros, brazos extendidos al frente. Estira hacia los lados abriendo pecho. Escápulas juntas atrás.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> escápulas activadas, espalda superior caliente.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag warmup">W</span>
+    <span class="block-name">Respiración Costal</span>
+    <span class="block-reps">3 reps</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Manos en las costillas. Inhala expandiendo las costillas lateralmente (no el pecho). Exhala cerrando costillas y activando core profundo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> activación del transverso abdominal. Prepara el core para todo el entreno.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 1 -->
+<div class="pair-label">Par 1 — Hombro + Tríceps</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A1</span>
+    <span class="block-name">Lateral Raises (inclinada ligera)</span>
+    <span class="block-reps">3 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">De pie con ligera inclinación, mancuernas ligeras. Brazos en plano escapular (ligeramente por delante del cuerpo). Sube hasta la altura de hombros.</span></div>
+    <div class="detail-row"><span class="detail-icon">🏋️</span><span class="detail-text"><strong>Peso:</strong> 3-6 kg.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> deltoide lateral — el "cap" del hombro. Crea la ilusión de cintura más fina.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No:</strong> Subir con trapecio. Si sientes cuello/hombro superior → baja el peso. Hombros bajos siempre.</span></div>
+    <div class="tip">💡 El deltoide lateral es TU arma secreta para el hourglass. Hombro bonito = cintura parece más fina.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B1</span>
+    <span class="block-name">Overhead Triceps Extension</span>
+    <span class="block-reps">3 × 12-15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Sentada o de pie, una mancuerna con ambas manos detrás de la cabeza. Codos apuntan al techo. Extiende arriba apretando tríceps.</span></div>
+    <div class="detail-row"><span class="detail-icon">🏋️</span><span class="detail-text"><strong>Peso:</strong> 6-12 kg.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> cabeza larga del tríceps — la que más se nota en la parte posterior del brazo. Estiramiento profundo abajo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No:</strong> Abrir codos. Codos pegados a las orejas siempre. Si se abren → baja peso.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 2 -->
+<div class="pair-label">Par 2 — Espalda Light</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A2</span>
+    <span class="block-name">DB / Band Row</span>
+    <span class="block-reps">3 × 10-12</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Inclinada con mancuerna o banda. Tira del codo hacia atrás pegado al cuerpo. Escápula junta atrás en cada rep.</span></div>
+    <div class="detail-row"><span class="detail-icon">🏋️</span><span class="detail-text"><strong>Peso:</strong> 8-16 kg.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> dorsal y romboides — espalda media. Pecho abierto, hombros abajo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No:</strong> Tirar solo con brazos. El movimiento empieza desde la escápula.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B2</span>
+    <span class="block-name">Rear Delt Fly</span>
+    <span class="block-reps">3 × 12-15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Inclinada hacia delante, mancuernas colgando. Abre brazos hacia los lados con codos ligeramente flexionados. Aprieta escápulas arriba.</span></div>
+    <div class="detail-row"><span class="detail-icon">🏋️</span><span class="detail-text"><strong>Peso:</strong> 3-5 kg. Movimiento controlado.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> deltoide posterior — parte trasera del hombro. Mejora postura y redondea el hombro.</span></div>
+  </div>
+</div>
+
+<!-- PAIR 3 -->
+<div class="pair-label">Par 3 — Glúteo + Corrección</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">A3</span>
+    <span class="block-name">Step-ups (controlados)</span>
+    <span class="block-reps">3 × 10/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Banco o step. Pie completo encima. Sube empujando con el glúteo de la pierna de arriba. Baja controlado.</span></div>
+    <div class="detail-row"><span class="detail-icon">🏋️</span><span class="detail-text"><strong>Peso:</strong> corporal o 4-8 kg (mancuernas a los lados).</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo de la pierna de arriba. Subida lenta y controlada.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No:</strong> Impulsarte con la pierna de abajo. Toda la fuerza sale del glúteo de arriba.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">B3</span>
+    <span class="block-name">Clamshell (banda)</span>
+    <span class="block-reps">3 × 15</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Tumbada de lado, banda por encima de rodillas, rodillas 90°. Abre rodilla de arriba manteniendo pies juntos.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> glúteo medio. Pelvis estable, movimiento limpio.</span></div>
+    <div class="tip">💡 Corrección de genu valgo: movimiento limpio, pausa 1s arriba. La pelvis NO se mueve.</div>
+  </div>
+</div>
+
+<!-- CORE -->
+<div class="section-label core">Core · Siempre al final</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag core">C1</span>
+    <span class="block-name">Dead Bug</span>
+    <span class="block-reps">3 × 10</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Boca arriba, brazos al techo, rodillas 90°. Extiende brazo + pierna opuesta simultáneamente. Lumbar pegada al suelo SIEMPRE.</span></div>
+    <div class="detail-row"><span class="detail-icon">⬆️</span><span class="detail-text">MUY lento. 3 seg bajando, 1 seg abajo, 2 seg subiendo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> transverso abdominal (faja profunda). Aplana el abdomen.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No:</strong> Flexores de cadera. Si los sientes → no bajes tanto la pierna.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag core">C2</span>
+    <span class="block-name">Side Plank</span>
+    <span class="block-reps">3 × 30s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Apoyada en antebrazo y borde del pie. Cuerpo recto, cadera arriba. Si es difícil → apoya rodilla de abajo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> oblicuo — costado. Estabilidad, no volumen.</span></div>
+    <div class="tip core">💡 Empieza con 15s si te cuestan y sube cada semana. Con rodilla apoyada es perfectamente válido.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag core">C3</span>
+    <span class="block-name">Hollow Hold</span>
+    <span class="block-reps">3 × 20s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">Boca arriba. Brazos extendidos detrás de la cabeza, piernas rectas ligeramente elevadas. Lumbar pegada al suelo. Mantén posición.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> todo el core frontal. Abdominales ardiendo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🚫</span><span class="detail-text"><strong>No:</strong> Lumbar despegada del suelo. Si se despega → sube las piernas un poco más alto.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag core">C4</span>
+    <span class="block-name">Vacuum</span>
+    <span class="block-reps">3 × 20s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🦵</span><span class="detail-text">A cuatro patas o de pie. Exhala todo el aire, luego mete el ombligo hacia dentro y arriba como si quisieras pegarlo a la columna. Mantén.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> toda la faja abdominal activándose. El transverso — el músculo que literalmente estrecha la cintura.</span></div>
+    <div class="tip core">💡 Secreto de modelos fitness. Practicarlo 3x/semana reduce visualmente la cintura.</div>
+  </div>
+</div>
+
+<script></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga — Recuperación Activa</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --card: #1a1a1a;
+  --accent: #7ec8a0;
+  --accent2: #4a9e75;
+  --text: #e8e0d8;
+  --muted: #8a8078;
+  --border: #2a2520;
+  --green: #7ec8a0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:0 0 60px 0; }
+.header { background:linear-gradient(135deg,var(--accent2) 0%,var(--accent) 100%); padding:32px 20px 24px; text-align:center; }
+.header h1 { font-family:'Playfair Display',serif; font-size:1.6rem; color:#fff; }
+.header .sub { font-size:0.82rem; color:rgba(255,255,255,0.8); margin-top:6px; font-weight:500; }
+.header .meta { display:flex; justify-content:center; gap:16px; margin-top:12px; font-size:0.75rem; color:rgba(255,255,255,0.7); flex-wrap:wrap; }
+.header .meta span { background:rgba(255,255,255,0.15); padding:4px 10px; border-radius:20px; }
+.section-label { padding:16px 20px 8px; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); font-weight:600; }
+.block { margin:0 12px 8px; background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+.block-header { display:flex; align-items:center; padding:14px 16px; cursor:pointer; gap:12px; -webkit-tap-highlight-color:transparent; }
+.block-header:active { background:rgba(255,255,255,0.03); }
+.block-tag { background:var(--accent); color:var(--bg); font-weight:700; font-size:0.7rem; padding:3px 8px; border-radius:6px; flex-shrink:0; }
+.block-name { flex:1; font-weight:600; font-size:0.88rem; }
+.block-reps { font-size:0.75rem; color:var(--muted); flex-shrink:0; }
+.chevron { width:18px; height:18px; transition:transform 0.25s ease; color:var(--muted); flex-shrink:0; }
+.block.open .chevron { transform:rotate(180deg); }
+.block-detail { display:none; padding:0 16px 16px; font-size:0.82rem; line-height:1.55; color:var(--muted); }
+.block.open .block-detail { display:block; }
+.detail-row { display:flex; gap:8px; margin-bottom:8px; align-items:flex-start; }
+.detail-icon { flex-shrink:0; width:18px; text-align:center; font-size:0.8rem; margin-top:1px; }
+.detail-text { flex:1; }
+.tip { background:rgba(126,200,160,0.08); border-left:3px solid var(--accent); padding:10px 12px; border-radius:0 8px 8px 0; margin-top:8px; font-size:0.78rem; color:var(--accent); }
+.pair-label { margin:0 12px; padding:12px 16px 4px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); font-weight:600; display:flex; align-items:center; gap:8px; }
+.pair-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.structure-box { margin:8px 12px 16px; padding:14px 16px; background:rgba(126,200,160,0.06); border:1px solid var(--border); border-radius:10px; font-size:0.78rem; color:var(--muted); line-height:1.6; }
+.structure-box strong { color:var(--text); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Yoga — Recuperación Activa</h1>
+  <div class="sub">Movilidad · Estiramientos · Reset</div>
+  <div class="meta">
+    <span>⏱ 25-35 min</span>
+    <span>🧘 Restore</span>
+    <span>1x semana</span>
+  </div>
+</div>
+
+<div class="structure-box">
+  <strong>Objetivo:</strong> Después de 5 días de entreno, el cuerpo necesita recuperar sin parar del todo.<br>
+  <strong>Prioridad:</strong> Caderas, espalda baja, hombros. Las zonas que más trabajan en el sistema A/B.<br>
+  <strong>Tempo:</strong> Todo lento. Respira profundo en cada postura. Mantén 30-60s por lado.
+</div>
+
+<!-- CADERA -->
+<div class="section-label">Apertura de Cadera</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">1</span>
+    <span class="block-name">Pigeon Pose (Paloma)</span>
+    <span class="block-reps">60s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Desde posición de tabla, lleva la rodilla derecha hacia la mano derecha. La espinilla se coloca diagonal. Pierna trasera extendida. Baja el torso hacia el suelo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> estiramiento profundo en el glúteo y rotador externo de la cadera delantera.</span></div>
+    <div class="tip">💡 EL estiramiento de cadera por excelencia. Después de hip thrusts y kickbacks toda la semana, esto es oro.</div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">2</span>
+    <span class="block-name">90/90 Stretch</span>
+    <span class="block-reps">45s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Sentada en el suelo, pierna delantera 90° y pierna trasera 90°. Torso erguido. Inclínate ligeramente sobre la pierna delantera.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> rotación interna y externa de cadera. Movilidad global de la articulación.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">3</span>
+    <span class="block-name">Frog Stretch (Rana)</span>
+    <span class="block-reps">45-60s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">A cuatro patas, abre las rodillas todo lo que puedas manteniendo los pies en línea con las rodillas. Baja caderas hacia el suelo, antebrazos apoyados.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> aductores e interior de cadera. Abre la cadera en abducción.</span></div>
+  </div>
+</div>
+
+<!-- FLEXORES -->
+<div class="pair-label">Flexores de cadera + Isquiotibiales</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">4</span>
+    <span class="block-name">Low Lunge (Anjaneyasana)</span>
+    <span class="block-reps">45s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Rodilla trasera en el suelo, pie delantero adelantado. Empuja la cadera hacia delante suavemente. Brazos arriba o en la rodilla.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> flexor de cadera de la pierna trasera estirándose. Libera tensión acumulada de estar sentada.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">5</span>
+    <span class="block-name">Forward Fold (Uttanasana)</span>
+    <span class="block-reps">45s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">De pie, pies juntos. Dobla el torso hacia delante desde la cadera. Deja colgar brazos y cabeza. Rodillas ligeramente flexionadas si hace falta.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> isquiotibiales y toda la cadena posterior. Descomprime la columna.</span></div>
+  </div>
+</div>
+
+<!-- COLUMNA -->
+<div class="pair-label">Columna + Espalda</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">6</span>
+    <span class="block-name">Cat-Cow (Gato-Vaca)</span>
+    <span class="block-reps">10 ciclos</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">A cuatro patas. Inhala: arquea la espalda, pecho hacia delante, mirada arriba (vaca). Exhala: redondea la espalda, barbilla al pecho, ombligo adentro (gato).</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> movilidad de toda la columna vértebra a vértebra. Libera tensión de entreno.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">7</span>
+    <span class="block-name">Supine Twist</span>
+    <span class="block-reps">45s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Boca arriba, rodillas al pecho. Deja caer ambas rodillas a un lado, brazos en cruz. Mira hacia el lado contrario. Respira profundo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> rotación de columna torácica, estiramiento oblicuo y espalda baja.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">8</span>
+    <span class="block-name">Child's Pose (Balasana)</span>
+    <span class="block-reps">60s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">De rodillas, siéntate sobre los talones. Estira brazos hacia delante en el suelo, frente apoyada. Rodillas juntas o separadas según comodidad.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> espalda baja elongándose, hombros relajados. Calma total.</span></div>
+  </div>
+</div>
+
+<!-- HOMBROS -->
+<div class="pair-label">Hombros + Upper body</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">9</span>
+    <span class="block-name">Thread the Needle</span>
+    <span class="block-reps">30s/lado</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">A cuatro patas. Pasa un brazo por debajo del otro, apoya el hombro y la sien en el suelo. El otro brazo puede estirarse hacia delante o hacia el techo.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> rotación torácica + estiramiento profundo de hombro. Libera tensión de rows y presses.</span></div>
+  </div>
+</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">10</span>
+    <span class="block-name">Puppy Pose (Anahatasana)</span>
+    <span class="block-reps">45s</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">A cuatro patas, camina las manos hacia delante sin mover las rodillas. Baja el pecho hacia el suelo, brazos extendidos. Caderas sobre rodillas.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> apertura de hombros y pecho. Extensión de columna torácica.</span></div>
+    <div class="tip">💡 Postura perfecta para después de días de tricep extensions y rows. Abre todo el tren superior.</div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="section-label">Cierre · Savasana</div>
+
+<div class="block" onclick="this.classList.toggle('open')">
+  <div class="block-header">
+    <span class="block-tag">11</span>
+    <span class="block-name">Savasana</span>
+    <span class="block-reps">3-5 min</span>
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+  <div class="block-detail">
+    <div class="detail-row"><span class="detail-icon">🧘</span><span class="detail-text">Tumbada boca arriba, piernas separadas, brazos a los lados con palmas hacia arriba. Cierra los ojos. Respira natural. No hagas nada.</span></div>
+    <div class="detail-row"><span class="detail-icon">🎯</span><span class="detail-text"><strong>Siente:</strong> todo el cuerpo relajándose. Reset completo del sistema nervioso.</span></div>
+    <div class="tip">💡 No te saltes savasana. Es donde el cuerpo integra todo el trabajo de la semana. 3 minutos mínimo.</div>
+  </div>
+</div>
+
+<script></script>
+</body>
+</html>
